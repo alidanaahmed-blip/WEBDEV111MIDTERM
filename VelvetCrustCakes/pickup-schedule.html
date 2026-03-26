@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velvet Crust Cakes | Pickup schedule</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="nav">
+      <div class="brand">
+        <img class="logo-mark" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f370.svg" alt="Velvet Crust Cakes logo">
+        <span class="brand-text">Velvet Crust Cakes</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="design.html">Designs</a>
+        <a href="orders.html">Orders</a>
+        <a href="pickup-schedule.html">Pickup</a>
+        <a href="about.html">About</a>
+      </div>
+      <a class="btn" href="orders.html">Confirm order</a>
+    </div>
+  </header>
+
+  <main class="section">
+    <h1 style="font-family:'Playfair Display',serif; margin-bottom:10px;">Pickup schedule</h1>
+    <p style="max-width:680px;">Choose a date and window that works. Slots update as orders come in; if you need a rush, leave a note in the order form.</p>
+
+    <div class="card" style="margin-top:16px;">
+      <table class="table">
+        <thead>
+          <tr><th>Day</th><th>Morning</th><th>Midday</th><th>Afternoon</th><th>Evening</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Monday</td><td>Open</td><td>Open</td><td>Limited</td><td>Closed</td></tr>
+          <tr><td>Tuesday</td><td>Open</td><td>Limited</td><td>Open</td><td>Closed</td></tr>
+          <tr><td>Wednesday</td><td>Open</td><td>Open</td><td>Open</td><td>Closed</td></tr>
+          <tr><td>Thursday</td><td>Limited</td><td>Open</td><td>Open</td><td>Closed</td></tr>
+          <tr><td>Friday</td><td>Open</td><td>Open</td><td>Limited</td><td>Limited</td></tr>
+          <tr><td>Saturday</td><td>Limited</td><td>Limited</td><td>Open</td><td>Closed</td></tr>
+          <tr><td>Sunday</td><td>Closed</td><td>Closed</td><td>Closed</td><td>Closed</td></tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top:18px; display:grid; gap:14px;">
+        <div class="form-grid">
+          <div>
+            <label for="pickup-date">Desired date</label>
+            <input type="date" id="pickup-date" name="pickup-date">
+          </div>
+          <div>
+            <label for="pickup-slot">Window</label>
+            <select id="pickup-slot" name="pickup-slot">
+              <option>10:00–12:00</option>
+              <option>12:00–14:00</option>
+              <option>14:00–16:00</option>
+              <option>16:00–18:00</option>
+            </select>
+          </div>
+        </div>
+        <div class="login-actions">
+          <a class="btn primary" href="orders.html">Add to order</a>
+          <a class="btn" href="design.html">Browse designs</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">Slots refresh hourly. Submit your order to lock a slot.</footer>
+  <script src="script.js"></script>
+</body>
+</html>

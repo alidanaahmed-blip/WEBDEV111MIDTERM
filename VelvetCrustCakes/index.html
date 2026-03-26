@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velvet Crust Cakes | Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@500;600;700&family=Baloo+2:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="nav">
+      <div class="brand">
+        <img class="logo-mark" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f370.svg" alt="Velvet Crust Cakes logo">
+        <span class="brand-text">Velvet Crust Cakes</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="design.html">Designs</a>
+        <a href="orders.html">Orders</a>
+        <a href="pickup-schedule.html">Pickup</a>
+        <a href="about.html">About</a>
+      </div>
+      <a class="btn" href="orders.html">Start Order</a>
+    </div>
+  </header>
+
+  <main id="home" class="section hero">
+    <div>
+      <div class="badge-row">
+        <span class="badge">Small-batch bakery</span>
+        <span class="badge">Custom fillings</span>
+        <span class="badge">Vibrant florals</span>
+        <span class="badge badge-pop">Glitter sugar</span>
+      </div>
+      <h1>Elegant, cloud-soft cakes for every celebration.</h1>
+      <p>Browse our signature silhouettes, pick your flavor story, choose your pickup time, and get a same-day confirmation from our cake artists.</p>
+      <div class="floating-chips" aria-hidden="true">
+        <span>🍓 Berry blush</span>
+        <span>🥥 Coconut silk</span>
+        <span>🍋 Lemon gloss</span>
+      </div>
+      <div class="login-actions" style="margin-top:18px;">
+        <a class="btn primary" href="design.html">Browse designs</a>
+        <a class="btn" href="orders.html">Customize flavors</a>
+      </div>
+      <div class="steps">
+        <div class="step"><strong>1 &bull; Browse designs</strong><br>Select a silhouette and finish.</div>
+        <div class="step"><strong>2 &bull; Customize flavors</strong><br>Layer flavors, fillings, and sizes.</div>
+        <div class="step"><strong>3 &bull; Pick date</strong><br>Reserve a pickup slot that fits.</div>
+        <div class="step"><strong>4 &bull; Confirm</strong><br>Receive a fast confirmation.</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="sprinkle-ring" aria-hidden="true"></div>
+      <img src="wall.webp" alt="Cake display">
+      <div class="ribbon">Fresh daily &bull; No freezer</div>
+    </div>
+  </main>
+
+  <section class="section card" aria-labelledby="featured">
+    <div style="display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;">
+      <h2 id="featured">This week's featured finishes</h2>
+      <a class="btn" href="design.html">See full gallery</a>
+    </div>
+    <div class="gallery" style="margin-top:18px;">
+      <div class="tile"><img src="chiffon.jpg" alt="Berry chiffon"><div class="label"><span>Berry chiffon</span><span class="price-chip">$58</span></div></div>
+      <div class="tile"><img src="red.jpeg" alt="Red Velvet"><div class="label"><span>Red Velvet</span><span class="price-chip">$62</span></div></div>
+      <div class="tile"><img src="pis.webp" alt="Pistachio rosettes"><div class="label"><span>Pistachio</span><span class="price-chip">$64</span></div></div>
+      <div class="tile"><img src="choco.jpg" alt="Chocolate Truffle"><div class="label"><span>Chocolate Truffle</span><span class="price-chip">$54</span></div></div>
+    </div>
+  </section>
+
+  <section class="section card" aria-labelledby="flavor-stacks">
+    <h2 id="flavor-stacks" style="font-family:'Playfair Display',serif; margin-bottom:10px;">Flavor stacks you can copy</h2>
+    <p style="max-width:760px;">Tap a chip or card to auto-fill the flavor field on the order form.</p>
+    <div class="floating-chips" style="margin:12px 0 6px;">
+      <span class="badge" data-flavor="Vanilla cloud + passionfruit curd">Vanilla cloud + passionfruit curd</span>
+      <span class="badge" data-flavor="Dark cocoa + salted caramel">Dark cocoa + salted caramel</span>
+      <span class="badge" data-flavor="Pistachio sponge + rosewater cream">Pistachio sponge + rosewater cream</span>
+      <span class="badge" data-flavor="Lemon chiffon + raspberry jam">Lemon chiffon + raspberry jam</span>
+    </div>
+    <div class="gallery" style="margin-top:12px;">
+      <div class="tile" data-flavor="Berry layers (vanilla sponge + raspberry jam + chantilly)">
+        <img src="b.jpg" alt="Berry layers">
+        <div class="label"><span>Berry layers</span><span class="price-chip">$48</span></div>
+      </div>
+      <div class="tile" data-flavor="Cocoa caramel (dark cocoa + salted caramel)">
+        <img src="caramel.jpg" alt="Cocoa caramel">
+        <div class="label"><span>Cocoa caramel</span><span class="price-chip">$50</span></div>
+      </div>
+      <div class="tile" data-flavor="Citrus bloom (lemon chiffon + passionfruit curd)">
+        <img src="cit.webp" alt="Citrus bloom">
+        <div class="label"><span>Citrus bloom</span><span class="price-chip">$52</span></div>
+      </div>
+    </div>
+    <div class="login-actions" style="margin-top:14px;">
+      <a class="btn primary" href="orders.html">Open order form</a>
+      <a class="btn" href="design.html">Browse more designs</a>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="flow">
+    <h2 id="flow" style="margin-bottom:12px;">Order flow, simplified</h2>
+    <div class="card">
+      <div class="timeline">
+        <span>Browse designs</span><span>Pick flavors</span><span>Choose date</span><span>Confirm</span>
+      </div>
+      <p style="max-width:760px;">We keep the flow short and sweet: choose a design, tailor the layers, secure a pickup window, and lock it in. No waiting for emails; you'll see a confirmation right after submitting your order form.</p>
+      <div class="login-actions" style="margin-top:16px;">
+        <a class="btn primary" href="orders.html">Jump to order form</a>
+        <a class="btn" href="pickup-schedule.html">Check pickup slots</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    Velvet Crust Cakes — baked in small batches daily. Questions? Visit About for contact + login.
+  </footer>
+  <div class="floating-login" aria-live="polite">
+    <div class="login-card">
+      <h2 style="font-family:'Playfair Display',serif; margin-bottom:8px;">Client login</h2>
+      <p style="margin-bottom:12px;">Track your order status, save favorite flavor stacks, and update pickup windows.</p>
+      <div id="login-status" class="status-pill" role="status" aria-live="polite" hidden></div>
+      <form id="login-form" style="display:grid; gap:12px;">
+        <div>
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="••••••••" required>
+        </div>
+        <div class="login-actions">
+          <button type="submit" class="btn primary">Log in</button>
+          <button type="button" class="btn ghost">Create account</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

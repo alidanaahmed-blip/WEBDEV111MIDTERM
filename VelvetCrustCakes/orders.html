@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velvet Crust Cakes | Orders</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Nunito:wght@500;600;700&family=Baloo+2:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="nav">
+      <div class="brand">
+        <img class="logo-mark" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f370.svg" alt="Velvet Crust Cakes logo">
+        <span class="brand-text">Velvet Crust Cakes</span>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="design.html">Designs</a>
+        <a href="orders.html">Orders</a>
+        <a href="pickup-schedule.html">Pickup</a>
+        <a href="about.html">About</a>
+      </div>
+      <a class="btn" href="pickup-schedule.html">Check pickup</a>
+    </div>
+  </header>
+
+  <main class="section">
+    <h1 style="font-family:'Playfair Display',serif; margin-bottom:10px;">Customize & confirm</h1>
+    <p style="max-width:720px;">Fill out your cake details. We confirm within minutes. Steps: choose a design, pick flavors, reserve a date, then confirm.</p>
+
+    <div class="card" style="margin-top:16px;">
+      <form id="order-form" class="form" style="display:grid; gap:20px;">
+        <div class="form-grid">
+          <div>
+            <label for="design" id="design">Design</label>
+            <input name="design" placeholder="e.g., Blush drip with fresh berries" required>
+          </div>
+          <div>
+            <label for="size">Size</label>
+            <select name="size" id="size">
+              <option>6" round (serves 8-10)</option>
+              <option>8" round (serves 12-15)</option>
+              <option>Two-tier (serves 20-25)</option>
+            </select>
+          </div>
+          <div>
+            <label for="flavor">Flavor</label>
+            <input id="flavor" name="flavor" placeholder="Vanilla bean + strawberry compote" required>
+          </div>
+          <div>
+            <label for="filling">Filling</label>
+            <select name="filling" id="filling">
+              <option>Light mascarpone</option>
+              <option>Salted caramel</option>
+              <option>Fresh berry chantilly</option>
+              <option>Chocolate ganache</option>
+              <option>Lemon curd</option>
+            </select>
+          </div>
+          <div>
+            <label for="date">Pickup date</label>
+            <input type="date" name="date" id="date" required>
+          </div>
+          <div>
+            <label for="slot">Pickup window</label>
+            <select name="slot" id="slot">
+              <option>10:00–12:00</option>
+              <option>12:00–14:00</option>
+              <option>14:00–16:00</option>
+              <option>16:00–18:00</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="notes">Notes</label>
+          <textarea name="notes" id="notes" rows="3" placeholder="Allergies, inscription text, color tweaks"></textarea>
+        </div>
+
+        <div>
+          <div class="floating-chips" style="margin-bottom:8px;">
+            <span class="badge" data-flavor="Vanilla cloud + passionfruit curd">Vanilla cloud + passionfruit curd</span>
+            <span class="badge" data-flavor="Dark cocoa + salted caramel">Dark cocoa + salted caramel</span>
+            <span class="badge" data-flavor="Pistachio sponge + rosewater cream">Pistachio sponge + rosewater cream</span>
+            <span class="badge" data-flavor="Lemon chiffon + raspberry jam">Lemon chiffon + raspberry jam</span>
+          </div>
+          <p class="small-note">Tap a flavor to auto-fill the flavor field.</p>
+        </div>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
+          <button class="btn primary" type="submit">Confirm order</button>
+          <a class="btn" href="pickup-schedule.html">See pickup schedule</a>
+          <span id="order-status" class="status-pill">Awaiting details</span>
+        </div>
+      </form>
+    </div>
+
+    <div class="card" style="margin-top:24px;">
+      <h2 style="font-family:'Playfair Display',serif; margin-bottom:6px;">Flavor stacks you can copy</h2>
+      <p style="max-width:760px;">Click any card to set the flavor field instantly.</p>
+      <div class="gallery" style="margin-top:14px;">
+        <div class="tile" data-flavor="Berry layers (vanilla sponge + raspberry jam + chantilly)">
+          <img src="b.jpg" alt="Berry layers">
+          <div class="label"><span>Berry layers</span><span class="price-chip">$48</span></div>
+        </div>
+        <div class="tile" data-flavor="Cocoa caramel (dark cocoa + salted caramel)">
+          <img src="caramel.jpg" alt="Cocoa caramel">
+          <div class="label"><span>Cocoa caramel</span><span class="price-chip">$50</span></div>
+        </div>
+        <div class="tile" data-flavor="Citrus bloom (lemon chiffon + passionfruit curd)">
+          <img src="cit.webp" alt="Citrus bloom">
+          <div class="label"><span>Citrus bloom</span><span class="price-chip">$52</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="steps" style="margin-top:20px;">
+      <div class="step"><strong>Browse designs</strong><br>Select a silhouette from the gallery.</div>
+      <div class="step"><strong>Customize flavors</strong><br>Layer flavors + fillings with the quick chips.</div>
+      <div class="step"><strong>Pick date</strong><br>Choose a pickup window that fits.</div>
+      <div class="step"><strong>Confirm order</strong><br>Submit — we'll send confirmation.</div>
+    </div>
+  </main>
+
+  <footer class="footer">Need a rush? Add it in notes and choose the earliest pickup window.</footer>
+  <script src="script.js"></script>
+</body>
+</html>
