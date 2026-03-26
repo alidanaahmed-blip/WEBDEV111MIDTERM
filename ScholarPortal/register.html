@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Semester Registration | ScholarPortal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="brand">
+        <img class="logo-mark" src="logo.svg" alt="ScholarPortal logo">
+        <span>ScholarPortal</span>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="courses.html">Course Catalog</a>
+        <a class="active" href="register.html">Semester</a>
+        <a href="profile.html">Profile</a>
+        <a href="transcript.html">Transcript</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="page-topper">
+      <div>
+        <span class="eyebrow">Step 2 and 3</span>
+        <h1>Add to Semester and Pay Fees</h1>
+        <p class="small">This page tracks the courses you selected and converts them into a payment-ready semester load.</p>
+      </div>
+      <div class="identity-chip">Student ID: <strong data-student-id>Not logged in</strong></div>
+    </div>
+
+    <div class="journey-strip page-journey">
+      <span class="journey-step">View Course Catalog</span>
+      <span class="journey-step is-current">Add to Semester</span>
+      <span class="journey-step is-current">Pay Fees</span>
+      <span class="journey-step">View Transcript</span>
+    </div>
+
+    <div class="register-layout">
+      <section class="card register-box">
+        <h2>Your Semester Queue</h2>
+        <p class="small">Course selections are stored locally in the portal for the active Student ID.</p>
+        <ul id="semesterList" class="semester-list"></ul>
+      </section>
+
+      <aside class="card billing-card">
+        <span class="panel-kicker">Billing Desk</span>
+        <h2>Fee Summary</h2>
+        <div class="summary-row">
+          <span>Queued courses</span>
+          <strong id="semesterCount">0</strong>
+        </div>
+        <div class="summary-row">
+          <span>Estimated fees</span>
+          <strong id="feeAmount">$0</strong>
+        </div>
+        <div class="summary-row">
+          <span>Status</span>
+          <strong id="paymentStatus">Pending</strong>
+        </div>
+        <button type="button" onclick="payFees()">Pay Fees</button>
+        <a class="btn secondary full-width" href="transcript.html">View Transcript</a>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer">ScholarPortal • Registration and Fees</footer>
+  <script src="script.js"></script>
+</body>
+</html>

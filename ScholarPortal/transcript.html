@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transcript | ScholarPortal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="brand">
+        <img class="logo-mark" src="logo.svg" alt="ScholarPortal logo">
+        <span>ScholarPortal</span>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="courses.html">Course Catalog</a>
+        <a href="register.html">Semester</a>
+        <a href="profile.html">Profile</a>
+        <a class="active" href="transcript.html">Transcript</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="page-topper">
+      <div>
+        <span class="eyebrow">Step 4</span>
+        <h1>Academic Transcript</h1>
+        <p class="small">Transcript status reflects your Student ID, current semester queue, and fee payment status.</p>
+      </div>
+      <div class="identity-chip">Student ID: <strong data-student-id>Not logged in</strong></div>
+    </div>
+
+    <div class="journey-strip page-journey">
+      <span class="journey-step">View Course Catalog</span>
+      <span class="journey-step">Add to Semester</span>
+      <span class="journey-step">Pay Fees</span>
+      <span class="journey-step is-current">View Transcript</span>
+    </div>
+
+    <section class="transcript-layout">
+      <article class="card transcript-card">
+        <div class="section-head compact-head">
+          <div>
+            <span class="panel-kicker">Unofficial Record</span>
+            <h2>Completed Courses</h2>
+          </div>
+          <span class="status-pill" id="paymentBanner">Fees Pending</span>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Course</th>
+                <th>Grade</th>
+                <th>Term</th>
+                <th>Credits</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Web Development</td><td>A</td><td>Fall 2024</td><td>3</td></tr>
+              <tr><td>Database Systems</td><td>B+</td><td>Fall 2024</td><td>3</td></tr>
+              <tr><td>Computer Networks</td><td>A-</td><td>Fall 2024</td><td>3</td></tr>
+              <tr><td>Discrete Math</td><td>A</td><td>Spring 2024</td><td>3</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <aside class="card transcript-side">
+        <span class="panel-kicker">Current Semester</span>
+        <h2>Queued Courses</h2>
+        <ul id="currentCourses" class="semester-list compact-list"></ul>
+        <div class="metric-stack">
+          <div class="metric-card">
+            <strong>3.72</strong>
+            <span>Cumulative GPA</span>
+          </div>
+          <div class="metric-card">
+            <strong>48</strong>
+            <span>Total credits</span>
+          </div>
+          <div class="metric-card">
+            <strong id="transcriptFeeState">Pending</strong>
+            <span>Fee clearance</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="footer">ScholarPortal • Transcript Preview</footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Catalog | ScholarPortal</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="brand">
+        <img class="logo-mark" src="logo.svg" alt="ScholarPortal logo">
+        <span>ScholarPortal</span>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a class="active" href="courses.html">Course Catalog</a>
+        <a href="register.html">Semester</a>
+        <a href="profile.html">Profile</a>
+        <a href="transcript.html">Transcript</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="page-topper">
+      <div>
+        <span class="eyebrow">Step 1</span>
+        <h1>Course Catalog</h1>
+        <p class="small">Notebook-style course folders let students scan content, seats, and prerequisites before adding to the semester.</p>
+      </div>
+      <div class="identity-chip">Active ID: <strong data-student-id>Not logged in</strong></div>
+    </div>
+
+    <div class="journey-strip page-journey">
+      <span class="journey-step is-current">View Course Catalog</span>
+      <span class="journey-step">Add to Semester</span>
+      <span class="journey-step">Pay Fees</span>
+      <span class="journey-step">View Transcript</span>
+    </div>
+
+    <section class="courses notebook-grid">
+      <article class="course-card notebook-card">
+        <span class="folder-tab">Frontend</span>
+        <h3>Web Development</h3>
+        <p>HTML, CSS, JavaScript, component structure, and responsive interfaces.</p>
+        <div class="tag-row">
+          <span class="tag">3 credits</span>
+          <span class="tag">Seats: 8</span>
+          <span class="tag">Prereq: None</span>
+        </div>
+        <button type="button" onclick="addCourse('Web Development')">Add to Semester</button>
+      </article>
+
+      <article class="course-card notebook-card">
+        <span class="folder-tab">Data Core</span>
+        <h3>Database Systems</h3>
+        <p>Relational design, normalization, SQL querying, and transaction control.</p>
+        <div class="tag-row">
+          <span class="tag">3 credits</span>
+          <span class="tag">Seats: 12</span>
+          <span class="tag">Prereq: Web Development</span>
+        </div>
+        <button type="button" onclick="addCourse('Database Systems')">Add to Semester</button>
+      </article>
+
+      <article class="course-card notebook-card">
+        <span class="folder-tab">Infrastructure</span>
+        <h3>Computer Networks</h3>
+        <p>TCP/IP, switching, routing, layered models, and network security basics.</p>
+        <div class="tag-row">
+          <span class="tag">3 credits</span>
+          <span class="tag">Seats: 5</span>
+          <span class="tag">Prereq: None</span>
+        </div>
+        <button type="button" onclick="addCourse('Computer Networks')">Add to Semester</button>
+      </article>
+
+      <article class="course-card notebook-card">
+        <span class="folder-tab">Advanced Lab</span>
+        <h3>Artificial Intelligence</h3>
+        <p>Problem solving, search methods, introductory machine learning, and model reasoning.</p>
+        <div class="tag-row">
+          <span class="tag">4 credits</span>
+          <span class="tag">Seats: 6</span>
+          <span class="tag">Prereq: Discrete Math</span>
+        </div>
+        <button type="button" onclick="addCourse('Artificial Intelligence')">Add to Semester</button>
+      </article>
+
+      <article class="course-card notebook-card">
+        <span class="folder-tab">Studio</span>
+        <h3>Data Visualization</h3>
+        <p>Dashboards, chart systems, visual storytelling, and analytics presentation.</p>
+        <div class="tag-row">
+          <span class="tag">3 credits</span>
+          <span class="tag">Seats: 10</span>
+          <span class="tag">Prereq: Web Development</span>
+        </div>
+        <button type="button" onclick="addCourse('Data Visualization')">Add to Semester</button>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">ScholarPortal • Course Catalog</footer>
+  <script src="script.js"></script>
+</body>
+</html>
