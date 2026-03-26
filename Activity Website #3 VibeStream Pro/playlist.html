@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VibeStream Pro - Playlists</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="banner-small">
+<img src="banner.png" class="banner-img-small">
+</div>
+
+<nav class="navbar">
+<div class="nav-container">
+<div class="logo">🎵 VibeStream Pro</div>
+
+<ul class="nav-menu">
+					<li><a href="home.html">Home</a></li>
+                    <li><a href="library.html" class="nav-link">Library</a></li>
+                    <li><a href="about.html" class="nav-link">About Us</a></li>
+                    <li><a href="playlist.html" class="active">Playlist</a></li>
+					<li><a href="contact.html" class="nav-link">Contact Us</a></li>
+				<li><a href="#" onclick="logout()">Log Out</a></li>
+</ul>
+</div>
+</nav>
+<section class="playlist-page">
+
+<div class="playlist-header">
+    <img src="cover.webp" class="playlist-cover">
+
+    <div class="playlist-info">
+        <p class="playlist-type">PLAYLIST</p>
+        <h1>My Favorites</h1>
+        <p class="playlist-desc">Your daily music mix</p>
+<button class="playlist-play" onclick="playPlaylist()">▶ Play</button>
+    </div>
+</div>
+
+
+<div class="playlist-tracks">
+
+<div class="track-row music-card"
+data-title="Blinding Lights"
+data-artist="The Weeknd"
+data-audio="audio/blindinglights.mp3"
+onclick="playSong(event)">
+
+<span class="track-num">1</span>
+<img src="album1.jpg" class="track-img">
+
+<div class="track-info">
+<h3>Blinding Lights</h3>
+<p>The Weeknd</p>
+</div>
+
+<span class="track-duration">3:22</span>
+
+</div>
+
+
+<div class="track-row music-card"
+data-title="Levitating"
+data-artist="Dua Lipa"
+data-audio="audio/levitating.mp3"
+onclick="playSong(event)">
+
+<span class="track-num">2</span>
+<img src="album2.jpg" class="track-img">
+
+<div class="track-info">
+<h3>Levitating</h3>
+<p>Dua Lipa</p>
+</div>
+
+<span class="track-duration">3:23</span>
+
+</div>
+
+</div>
+</section>
+<!-- AUDIO PLAYER -->
+<div id="audioPlayer" class="audio-player">
+
+<div class="player-content">
+
+<div class="album-art">
+<img id="playerAlbumArt" src="album1.jpg">
+</div>
+
+<div class="player-info">
+<h3 id="playerTitle">Song Title</h3>
+<p id="playerArtist">Artist</p>
+
+<audio id="audioPlayerElement" controls></audio>
+
+<div class="player-controls">
+<button onclick="previousSong()" class="control-btn">⏮ Previous</button>
+<button onclick="nextSong()" class="control-btn">⏭ Next</button>
+<button onclick="closePlayer()" class="control-btn close-btn">✖ Close</button>
+</div>
+
+</div>
+</div>
+</div>
+
+<footer class="footer">
+<p>© 2026 VibeStream Pro</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
