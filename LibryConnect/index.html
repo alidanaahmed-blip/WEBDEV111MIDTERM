@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LibryConnect | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="navbar">
+    <div class="brand">
+      <img class="logo-mark" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4d6.svg" alt="LibryConnect logo">
+      <span>LibryConnect</span>
+    </div>
+    <nav>
+      <a class="active" href="index.html">Home</a>
+      <a href="search.html">Search</a>
+      <a href="members.html">Members</a>
+      <a href="loans.html">Loans</a>
+    </nav>
+    <div id="sessionBadge" class="session-badge" aria-live="polite"></div>
+  </div>
+</header>
+<div class="nav-search">
+  <div class="nav-search-bar">
+    <input id="navSearch" type="search" placeholder="Quick search the catalog…" oninput="renderResults('navSearch','navResults')">
+    <button class="btn ghost" onclick="renderResults('navSearch','navResults')">Search</button>
+  </div>
+  <div id="navResults" class="results"></div>
+</div>
+
+<main>
+  <section class="hero-banner">
+    <div class="hero-copy">
+      <div class="eyebrow">Community Library Network</div>
+      <h1>Borrow beautifully. Discover together.</h1>
+      <p class="lede">Vintage stacks meet modern search. Explore the catalog, place holds, and track every due date from one calm workspace.</p>
+      <div class="cta-row">
+        <a class="btn" href="search.html">Browse catalog</a>
+        <a class="btn ghost" href="members.html">Member portal</a>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><span class="stat-number">84k</span>Items cataloged</div>
+        <div class="stat"><span class="stat-number">2.4k</span>Holds this week</div>
+        <div class="stat"><span class="stat-number">24/7</span>Digital access</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="shelf-photo">
+        <img class="shelf-photo-img" src="book.jpg" alt="Library shelves and reading space">
+      </div>
+      <div class="shelf-tag">Reading Room • Open today 9am–9pm</div>
+    </div>
+  </section>
+
+    <div class="card">
+      <div class="section-title"><span>Library services</span></div>
+      <div class="steps">
+        <span class="step-pill">Check availability</span>
+        <span class="step-pill">Place hold</span>
+        <span class="step-pill">Renew online</span>
+        <span class="step-pill">Pickup scheduling</span>
+      </div>
+      <p style="margin-top:12px;">Keep discovery, holds, notices, and due dates in one light-filled, vintage-modern space.</p>
+      <div class="cover-strip">
+        <img src="b1.jpg" alt="Book cover">
+        <img src="b2.webp" alt="Book cover">
+        <img src="b3.jpg" alt="Book cover">
+        <img src="b4.jpg" alt="Book cover">
+      </div>
+      <div class="login-buttons" style="margin-top:14px;max-width:520px;">
+        <div class="card-login">
+          <span>Member Login</span><button data-auth-mode="login">Enter Card</button>
+        </div>
+        <div class="card-login">
+          <span>Get a Library Card</span><button data-auth-mode="register">Register</button>
+        </div>
+      </div>
+    </div>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <img class="feature-card-img" src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1200&q=80" alt="Curated reading list display">
+      <div class="feature-card-content">
+        <span class="pill">Collections</span>
+        <h3>Curated reading lists</h3>
+        <p>Staff picks, local authors, and syllabus-ready sets refreshed weekly.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <img class="feature-card-img" src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1200&q=80" alt="Library member browsing shelves">
+      <div class="feature-card-content">
+        <span class="pill">Members</span>
+        <h3>One card, everywhere</h3>
+        <p>Borrowing history, fines, and notices synced across desks and devices.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <img class="feature-card-img" src="book.webp" alt="Book loans and reading area">
+      <div class="feature-card-content">
+        <span class="pill">Loans</span>
+        <h3>Renew without lines</h3>
+        <p>Instant renewals, queue positions, and receipts in a single glance.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">LibryConnect • Vintage-modern library access</footer>
+<script src="script.js"></script>
+</body>
+</html>
+

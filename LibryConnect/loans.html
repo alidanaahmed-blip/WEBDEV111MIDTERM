@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LibryConnect | Loans</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="navbar">
+    <div class="brand">
+      <img class="logo-mark" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4d6.svg" alt="LibryConnect logo">
+      <span>LibryConnect</span>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="search.html">Search</a>
+      <a href="members.html">Members</a>
+      <a class="active" href="loans.html">Loans</a>
+    </nav>
+    <div id="sessionBadge" class="session-badge" aria-live="polite"></div>
+  </div>
+</header>
+<div class="nav-search">
+  <div class="nav-search-bar">
+    <input id="navSearch" type="search" placeholder="Quick search the catalog…" oninput="renderResults('navSearch','navResults')">
+    <button class="btn ghost" onclick="renderResults('navSearch','navResults')">Search</button>
+  </div>
+  <div id="navResults" class="results"></div>
+</div>
+
+<main>
+  <section class="page-hero">
+    <img class="page-hero-img" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1400&q=80" alt="Loans page hero image">
+    <div class="page-hero-content">
+      <div class="eyebrow">Loans & Holds</div>
+      <h1>Stay ahead of due dates</h1>
+      <p>Renew, queue, and pickup with clear status at a glance.</p>
+    </div>
+  </section>
+
+  <div class="card">
+    <div class="section-title"><span>Your shelf</span></div>
+    <table class="table">
+      <tr><th>Title</th><th>Status</th><th>Due / Queue</th></tr>
+      <tr><td>The Pragmatic Programmer</td><td><span class="status-loan">On loan</span></td><td>Due Apr 2</td></tr>
+      <tr><td>Designing Data-Intensive Applications</td><td><span class="status-hold">On hold</span></td><td>#2 in queue</td></tr>
+      <tr><td>Clean Code</td><td><span class="status-loan">On loan</span></td><td>Due Mar 29</td></tr>
+    </table>
+    <div class="button-row">
+      <a class="btn" href="search.html">Place new hold</a>
+      <a class="btn ghost" href="members.html">View notices</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-title"><span>Pickup & reminders</span></div>
+    <p class="small">Choose pickup desk, set SMS/email reminders, and print receipts.</p>
+    <div class="steps">
+      <span class="step-pill">Main desk</span>
+      <span class="step-pill">Locker pickup</span>
+      <span class="step-pill">Email receipts</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="section-title"><span>Latest receipt</span></div>
+    <div id="latestReceipt" class="receipt-placeholder">Borrow a book from search to generate a checkout receipt.</div>
+  </div>
+</main>
+
+<footer class="footer">LibryConnect • Loans</footer>
+<script src="script.js"></script>
+</body>
+</html>
+

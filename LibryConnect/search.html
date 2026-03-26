@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LibryConnect | Search</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="navbar">
+    <div class="brand">
+      <img class="logo-mark" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4d6.svg" alt="LibryConnect logo">
+      <span>LibryConnect</span>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a class="active" href="search.html">Search</a>
+      <a href="members.html">Members</a>
+      <a href="loans.html">Loans</a>
+    </nav>
+    <div id="sessionBadge" class="session-badge" aria-live="polite"></div>
+  </div>
+</header>
+<div class="nav-search">
+  <div class="nav-search-bar">
+    <input id="navSearch" type="search" placeholder="Quick search the catalog…" oninput="renderResults('navSearch','navResults')">
+    <button class="btn ghost" onclick="renderResults('navSearch','navResults')">Search</button>
+  </div>
+  <div id="navResults" class="results"></div>
+</div>
+
+<main>
+  <section class="page-hero search-hero">
+    <img class="page-hero-img" src="b5.jpg" alt="Library search hero image">
+    <div class="page-hero-content">
+      <div class="eyebrow">Search-centric</div>
+      <h1>Slide into the stacks</h1>
+      <p>Large central search, live results under the bar, and instant status for every format.</p>
+    </div>
+  </section>
+
+  <div class="search-shell">
+    <div class="search-intro">
+      <div class="section-title"><span>Instant results</span></div>
+      <span class="search-pill">Search-first mode</span>
+    </div>
+    <p class="small">Use the navigation search above to explore the catalog. Results appear under the bar when you type, and each result can generate a checkout receipt.</p>
+  </div>
+
+  <div class="card">
+    <div class="section-title"><span>Book image sources</span></div>
+    <div id="bookImageEditor" class="book-editor"></div>
+  </div>
+
+  <div class="image-strip">
+    <img src="sun.webp" alt="Sunlit reading tables">
+    <img src="stacks.webp" alt="Modern library stacks">
+    <img src="books.png" alt="Curated displays">
+  </div>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <img class="feature-card-img" src="https://images.unsplash.com/photo-1463320898484-cdee8141c787?auto=format&fit=crop&w=1200&q=80" alt="Library discovery shelf">
+      <div class="feature-card-content">
+        <span class="pill">Discovery</span>
+        <h3>Spotlight shelves</h3>
+        <p>Saved searches become shelves you can reopen in one tap.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <img class="feature-card-img" src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1200&q=80" alt="Print and digital book formats">
+      <div class="feature-card-content">
+        <span class="pill">Formats</span>
+        <h3>Print + digital twins</h3>
+        <p>See queue length, pickup desk, and eBook availability side by side.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <img class="feature-card-img" src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1200&q=80" alt="Library workflow and shelves">
+      <div class="feature-card-content">
+        <span class="pill">Workflow</span>
+        <h3>Hold ? Loan ? Renew</h3>
+        <p>Place holds, borrow, and renew without leaving the search canvas.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">LibryConnect • Search</footer>
+<script src="script.js"></script>
+</body>
+</html>
+
+
+

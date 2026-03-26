@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LibryConnect | Members</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="navbar">
+    <div class="brand">
+      <img class="logo-mark" src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4d6.svg" alt="LibryConnect logo">
+      <span>LibryConnect</span>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="search.html">Search</a>
+      <a class="active" href="members.html">Members</a>
+      <a href="loans.html">Loans</a>
+    </nav>
+    <div id="sessionBadge" class="session-badge" aria-live="polite"></div>
+  </div>
+</header>
+<div class="nav-search">
+  <div class="nav-search-bar">
+    <input id="navSearch" type="search" placeholder="Quick search the catalog…" oninput="renderResults('navSearch','navResults')">
+    <button class="btn ghost" onclick="renderResults('navSearch','navResults')">Search</button>
+  </div>
+  <div id="navResults" class="results"></div>
+</div>
+
+<main>
+  <section class="page-hero">
+    <img class="page-hero-img" src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1400&q=80" alt="Members page hero image">
+    <div class="page-hero-content">
+      <div class="eyebrow">Members</div>
+      <h1>Your library card, everywhere</h1>
+      <p>Profiles, borrowing history, fines, and notices in one tidy view.</p>
+    </div>
+  </section>
+
+  <div class="card">
+    <div class="section-title"><span>Quick access</span></div>
+    <div class="grid">
+      <div>
+        <h3>Sign in</h3>
+        <div class="login-buttons">
+          <div class="card-login">
+            <span>Student Login</span><button data-auth-mode="login">Enter ID</button>
+          </div>
+          <div class="card-login">
+            <span>Staff Login</span><button data-auth-mode="login">Authenticate</button>
+          </div>
+          <div class="card-login">
+            <span>Get Library Card</span><button data-auth-mode="register">Register</button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3>Notices</h3>
+        <ul class="list-clean">
+          <li>Account holds: none</li>
+          <li>Fines outstanding: $0.00</li>
+          <li>Preferred pickup: Main Desk</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="feature-grid">
+    <div class="feature-card">
+      <img class="feature-card-img" src="https://images.unsplash.com/photo-1457694587812-e8bf29a43845?auto=format&fit=crop&w=1200&q=80" alt="Borrowing history feature image">
+      <div class="feature-card-content">
+        <span class="pill">History</span>
+        <h3>Borrowing timeline</h3>
+        <p>Receipts, renewals, and reminders with rich history filters.</p>
+      </div>
+    </div>
+    <div class="feature-card">
+      <img class="feature-card-img" src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=1200&q=80" alt="Reading rooms and events feature image">
+      <div class="feature-card-content">
+        <span class="pill">Perks</span>
+        <h3>Reading rooms & events</h3>
+        <p>Reserve study rooms, register for author talks, and print passes.</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">LibryConnect • Members</footer>
+<script src="script.js"></script>
+</body>
+</html>
+
