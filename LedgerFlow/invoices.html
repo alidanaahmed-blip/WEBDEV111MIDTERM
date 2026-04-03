@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LedgerFlow - Invoices</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <div class="logo">
+        <img class="logo-mark" alt="LedgerFlow logo" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'><stop stop-color='%2310b981'/><stop offset='1' stop-color='%238b5cf6'/></linearGradient></defs><rect width='120' height='120' rx='26' fill='url(%23g)'/><rect x='26' y='28' width='18' height='48' rx='6' fill='white'/><rect x='54' y='44' width='18' height='32' rx='6' fill='white' opacity='0.95'/><path d='M28 88c18-17 34-24 63-31' stroke='%23fef08a' stroke-width='8' stroke-linecap='round' fill='none'/></svg>">
+        <span>LedgerFlow</span>
+      </div>
+      <ul class="nav-links main-nav">
+        <li><a href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+        <li><a href="invoices.html" class="active"><i class="fas fa-file-invoice"></i> Invoices</a></li>
+        <li><a href="clients.html"><i class="fas fa-users"></i> Clients</a></li>
+        <li><a href="pay.html"><i class="fas fa-credit-card"></i> Pay</a></li>
+        <li><button id="logout" class="btn btn-secondary"><i class="fas fa-sign-out-alt"></i> Logout</button></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div class="page-header-row">
+      <div>
+        <h1 class="page-title">Invoices</h1>
+        <p class="page-subtitle">The original invoice table, plus a little more guidance on what each step is for.</p>
+      </div>
+      <button id="create-invoice" class="action-btn"><i class="fas fa-plus"></i> Create New Invoice</button>
+    </div>
+
+    <div class="overview-panel">
+      <div class="overview-copy">
+        <h2><i class="fas fa-file-invoice"></i> Invoices Overview</h2>
+        <p>This page helps you create invoices, track status changes, and download PDFs so you can move from invoice creation to payment collection without losing context.</p>
+      </div>
+      <div class="overview-actions">
+        <a class="overview-link" href="dashboard.html"><i class="fas fa-tachometer-alt"></i> Back to dashboard</a>
+        <a class="overview-link" href="clients.html"><i class="fas fa-users"></i> Open clients</a>
+        <a class="overview-link" href="pay.html"><i class="fas fa-credit-card"></i> Review payments</a>
+      </div>
+    </div>
+
+    <div class="table-container">
+      <table id="invoices-table">
+        <thead>
+          <tr>
+            <th>Invoice #</th>
+            <th>Client</th>
+            <th>Amount</th>
+            <th>Due Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </main>
+
+  <div id="invoice-modal" class="modal hidden">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span>Create New Invoice</span>
+        <button data-close class="btn btn-secondary"><i class="fas fa-times"></i></button>
+      </div>
+
+      <div class="stepper">
+        <div class="step"></div>
+        <div class="step"></div>
+        <div class="step"></div>
+      </div>
+
+      <div class="step-content">
+        <h3>1. Select or Add Client</h3>
+        <div class="form-group">
+          <label for="client-select">Client</label>
+          <select id="client-select">
+            <option value="">Choose client...</option>
+          </select>
+        </div>
+        <button class="btn w-full step-next">Next: Amount</button>
+      </div>
+
+      <div class="step-content hidden">
+        <h3>2. Enter Amount</h3>
+        <div class="form-group">
+          <label for="amount">Amount ($)</label>
+          <input type="number" id="amount" step="0.01" placeholder="0.00">
+        </div>
+        <div class="form-group">
+          <label for="description">Description (optional)</label>
+          <input type="text" id="description" placeholder="Services rendered">
+        </div>
+        <button class="btn w-full step-next">Next: Due Date</button>
+      </div>
+
+      <div class="step-content hidden">
+        <h3>3. Set Due Date &amp; Generate</h3>
+        <div class="form-group">
+          <label for="due-date">Due Date</label>
+          <input type="date" id="due-date">
+        </div>
+        <button class="btn w-full step-next"><i class="fas fa-file-pdf"></i> Generate Invoice &amp; PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    window.refreshInvoices = function() {
+      const select = document.getElementById('client-select');
+      select.innerHTML = '<option value="">Choose client...</option>';
+      app.db.clients.forEach(client => {
+        const opt = document.createElement('option');
+        opt.value = client.id;
+        opt.textContent = client.name;
+        select.appendChild(opt);
+      });
+
+      const tbody = document.querySelector('#invoices-table tbody');
+      tbody.innerHTML = '';
+      app.db.invoices.forEach(invoice => {
+        const row = tbody.insertRow();
+        const statusClass = invoice.status === 'paid' ? 'paid' : invoice.status === 'pending' ? 'pending' : 'overdue';
+        row.innerHTML = `
+          <td>${invoice.id}</td>
+          <td>${invoice.clientName}</td>
+          <td>$${invoice.amount.toLocaleString()}</td>
+          <td>${new Date(invoice.dueDate).toLocaleDateString()}</td>
+          <td><span class="status ${statusClass}">${invoice.status.toUpperCase()}</span></td>
+          <td class="actions">
+            <button class="btn btn-sm" onclick="handleAction('view', '${invoice.id}')"><i class="fas fa-eye"></i></button>
+            <button class="btn btn-sm btn-secondary" onclick="handleAction('pdf', '${invoice.id}')"><i class="fas fa-file-pdf"></i></button>
+            <button class="btn btn-sm" onclick="handleAction('send', '${invoice.id}')"><i class="fas fa-share"></i></button>
+          </td>
+        `;
+      });
+    };
+
+    initPage();
+    window.refreshInvoices();
+  </script>
+</body>
+</html>
+
+

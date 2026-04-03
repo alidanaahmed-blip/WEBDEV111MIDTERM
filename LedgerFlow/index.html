@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LedgerFlow - Secure Finance Dashboard | Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-card">
+      <div class="logo" style="justify-content: center; font-size: 3rem; margin-bottom: 1rem;">
+        <img class="logo-mark" alt="LedgerFlow logo" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'><defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'><stop stop-color='%2310b981'/><stop offset='1' stop-color='%238b5cf6'/></linearGradient></defs><rect width='120' height='120' rx='26' fill='url(%23g)'/><rect x='26' y='28' width='18' height='48' rx='6' fill='white'/><rect x='54' y='44' width='18' height='32' rx='6' fill='white' opacity='0.95'/><path d='M28 88c18-17 34-24 63-31' stroke='%23fef08a' stroke-width='8' stroke-linecap='round' fill='none'/></svg>">
+        <span>LedgerFlow</span>
+      </div>
+      <p class="auth-subtitle" style="font-size: 1.1rem; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Fun &amp; Secure Finance Flow</p>
+      <form id="login-form">
+        <div class="form-group">
+          <label for="email"><i class="fas fa-envelope"></i> Email</label>
+          <input type="email" id="email" required placeholder="your@email.com">
+        </div>
+        <div class="form-group">
+          <label for="password"><i class="fas fa-lock"></i> Password</label>
+          <input type="password" id="password" required placeholder="Enter your password">
+        </div>
+        <div class="form-group">
+          <label for="twofa"><input type="checkbox" id="twofa" style="width:auto; margin-right:0.5rem;"> Enable 2FA</label>
+          <small style="color: var(--gray-500);">Two-factor authentication adds extra security</small>
+        </div>
+        <button type="submit" class="btn w-full"><i class="fas fa-sign-in-alt"></i> Sign In Securely</button>
+        <div class="login-actions" style="margin-top:1rem;">
+          <button type="button" class="btn btn-secondary w-full" onclick="window.location.href='register.html'"><i class="fas fa-user-plus"></i> Create Account</button>
+        </div>
+      </form>
+      <div class="security-badges">
+        <div class="security-badge"><i class="fas fa-lock"></i> End-to-end encryption</div>
+        <div class="security-badge"><i class="fas fa-cloud"></i> SOC 2 compliant</div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+  <script>initPage();</script>
+</body>
+</html>
+
