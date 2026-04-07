@@ -1,0 +1,164 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Events | Admin Dashboard</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="admin-dashboard">
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="../index.html" aria-label="Nexus Events home">
+        <span class="brand__logo" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 6L36.5 18.5L49 14L44.5 26.5L58 32L44.5 37.5L49 50L36.5 45.5L32 58L27.5 45.5L15 50L19.5 37.5L6 32L19.5 26.5L15 14L27.5 18.5L32 6Z" fill="#FFE45E" stroke="#07020F" stroke-width="3"/>
+            <path d="M22 43V21L32 32L42 21V43" stroke="#07020F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="32" cy="32" r="3.5" fill="#FF4FD8" stroke="#07020F" stroke-width="2"/>
+          </svg>
+        </span>
+        <span class="brand__text">
+          <span class="brand__name">Nexus Events</span>
+          <span class="brand__sub">NEON CITY NIGHTS</span>
+        </span>
+      </a>
+      <nav class="nav-links">
+        <a href="../index.html">Back to Site</a>
+        <button class="btn btn--ghost" type="button" data-admin-logout>Log Out</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero admin-hero">
+      <div>
+        <p class="hero-kicker">Control Room</p>
+        <h1>Run the glow behind the scenes.</h1>
+        <p>Track ticket momentum, venue readiness, crew priorities, and guest requests from one bold dashboard built for live event operations.</p>
+        <div class="button-row">
+          <button class="btn btn--big btn--lime" type="button">Launch New Event</button>
+          <button class="btn btn--big btn--alt" type="button">Update Pass Tiers</button>
+        </div>
+      </div>
+      <div class="poster-card poster-card--home poster-card--tilt">
+        <span class="sticker">LIVE</span>
+        <p class="poster-label">Tonight's Spotlight</p>
+        <h2>Neon Circuit Live</h2>
+        <p>Main Hall goes live at 9:00 PM with full stage visuals, laser cues, and open rooftop flow already in motion.</p>
+        <div class="tag-row">
+          <span class="tag">Crew Ready</span>
+          <span class="tag">Stage Check</span>
+          <span class="tag">VIP List</span>
+        </div>
+        <a class="btn btn--big btn--ghost" href="../events.html">View Public Lineup</a>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="stat"><strong>1,248</strong>tickets sold today</div>
+      <div class="stat"><strong>92%</strong>venue capacity booked</div>
+      <div class="stat"><strong>18</strong>active staff on duty</div>
+      <div class="stat"><strong>6</strong>open support threads</div>
+    </section>
+
+    <section class="admin-grid">
+      <div class="panel">
+        <h2 class="section-title">Upcoming Events</h2>
+        <div class="table">
+          <div class="table-row table-head">
+            <span>Event</span>
+            <span>Date</span>
+            <span>Status</span>
+          </div>
+          <div class="table-row">
+            <span>Electric Mirage</span>
+            <span>Apr 25</span>
+            <span class="status status--green">On Track</span>
+          </div>
+          <div class="table-row">
+            <span>Glow Bite Alley</span>
+            <span>Apr 25</span>
+            <span class="status status--yellow">Staffing</span>
+          </div>
+          <div class="table-row">
+            <span>Afterflash Finale</span>
+            <span>Apr 27</span>
+            <span class="status status--green">Confirmed</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2 class="section-title">Ticket Pulse</h2>
+        <div class="ticket-meter">
+          <div class="meter-row">
+            <span>Glow Pass</span>
+            <div class="meter"><span style="width: 74%"></span></div>
+            <strong>74%</strong>
+          </div>
+          <div class="meter-row">
+            <span>Flash Pass</span>
+            <div class="meter"><span style="width: 56%"></span></div>
+            <strong>56%</strong>
+          </div>
+          <div class="meter-row">
+            <span>Nova VIP</span>
+            <div class="meter"><span style="width: 34%"></span></div>
+            <strong>34%</strong>
+          </div>
+        </div>
+        <div class="button-row" style="margin-top: 1rem;">
+          <button class="btn btn--ghost" type="button">Adjust Pricing</button>
+          <button class="btn btn--ghost" type="button">Export Guest List</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2 class="section-title">Venue Ops</h2>
+        <ul class="checklist">
+          <li class="checklist-item"><span class="status status--green">Ready</span> Main stage lighting rig checked</li>
+          <li class="checklist-item"><span class="status status--green">Ready</span> Glow Bite Alley vendor load-in</li>
+          <li class="checklist-item"><span class="status status--yellow">Pending</span> Sky Deck sound calibration</li>
+          <li class="checklist-item"><span class="status status--red">Alert</span> VIP lounge restock</li>
+        </ul>
+      </div>
+
+      <div class="panel">
+        <h2 class="section-title">Guest Inbox</h2>
+        <div class="table">
+          <div class="table-row table-head">
+            <span>Sender</span>
+            <span>Topic</span>
+            <span>Priority</span>
+          </div>
+          <div class="table-row">
+            <span>J. Alvarez</span>
+            <span>Group Booking</span>
+            <span class="status status--yellow">Medium</span>
+          </div>
+          <div class="table-row">
+            <span>Press Studio</span>
+            <span>Media Pass</span>
+            <span class="status status--red">High</span>
+          </div>
+          <div class="table-row">
+            <span>Merch Lab</span>
+            <span>Inventory</span>
+            <span class="status status--green">Low</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="pill">Nexus Events - Admin Desk</p>
+      <p>(c) <span data-year></span> Nexus Events. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="../js/app.js" defer></script>
+  <script src="../js/admin.js" defer></script>
+</body>
+</html>
