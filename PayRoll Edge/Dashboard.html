@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayRoll Edge | Enterprise Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- CORPORATE DESIGN SYSTEM --- */
+        :root {
+            --navy-dark: #001f3f;
+            --navy-medium: #003366;
+            --navy-light: #004080;
+            --accent-blue: #4da6ff;
+            --bg-color: #f4f7fa;
+            --box-bg: #ffffff;
+            --text-main: #2c3e50;
+            --text-muted: #7f8c8d;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --danger: #e74c3c;
+            --radius: 24px; /* Distinct Bento rounding */
+            --shadow: 0 10px 30px rgba(0, 31, 63, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* --- SIDEBAR NAVIGATION --- */
+        .sidebar {
+            width: 280px;
+            background-color: var(--navy-dark);
+            color: white;
+            padding: 2.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+        }
+
+        .logo {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 3.5rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo i { color: var(--accent-blue); font-size: 2rem; }
+        .logo span { color: var(--accent-blue); }
+
+        .nav-menu { list-style: none; flex-grow: 1; }
+        .nav-menu li { margin-bottom: 0.8rem; }
+        .nav-menu a {
+            color: #bdc3c7;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 18px;
+            border-radius: 12px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover, .nav-menu a.active {
+            background-color: rgba(77, 166, 255, 0.15);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .nav-menu a.active {
+            background-color: var(--navy-medium);
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .sidebar-footer {
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.8rem;
+            color: #7f8c8d;
+        }
+
+        /* --- MAIN CONTENT & HEADER --- */
+        .main-content {
+            flex: 1;
+            padding: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .header h2 { font-size: 1.8rem; font-weight: 700; color: var(--navy-dark); }
+
+        .user-controls {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .security-badge {
+            background: #d4edda;
+            color: #155724;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* --- BENTO GRID SYSTEM --- */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: minmax(180px, auto);
+            gap: 24px;
+        }
+
+        .bento-box {
+            background: var(--box-bg);
+            border-radius: var(--radius);
+            padding: 28px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.02);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bento-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 31, 63, 0.1);
+        }
+
+        /* Layout Overrides */
+        .span-2 { grid-column: span 2; }
+        .span-3 { grid-column: span 3; }
+        .row-2 { grid-row: span 2; }
+
+        /* Typography */
+        .box-title {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .box-value {
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: var(--navy-dark);
+            margin-bottom: 8px;
+        }
+
+        .unit { font-size: 1.1rem; color: var(--text-muted); font-weight: 400; }
+
+        /* --- SPECIAL WIDGET STYLES --- */
+        .widget-accent {
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-medium) 100%);
+            color: white;
+        }
+        .widget-accent .box-title, .widget-accent .box-value { color: white; }
+
+        .img-header {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 20px;
+        }
+
+        .news-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            border-left: 4px solid var(--accent-blue);
+        }
+
+        .news-item h4 { font-size: 0.95rem; margin-bottom: 4px; }
+        .news-item p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
+
+        /* --- INPUTS & BUTTONS --- */
+        .quick-form input {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #edf2f7;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .quick-form input:focus { border-color: var(--accent-blue); }
+
+        .btn-action {
+            width: 100%;
+            padding: 14px;
+            background: var(--navy-medium);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-action:hover { background: var(--navy-light); }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent-blue);
+            color: var(--accent-blue);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 1100px) {
+            .bento-grid { grid-template-columns: repeat(2, 1fr); }
+            .span-2, .span-3 { grid-column: span 2; }
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-fingerprint"></i>
+            PayRoll<span>Edge</span>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="#" class="active"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+            <li><a href="staff.html"><i class="fa-solid fa-users"></i> Staff</a></li>
+            <li><a href="timesheets.html"><i class="fa-solid fa-clock-rotate-left"></i> Timesheets</a></li>
+            <li><a href="payslips.html"><i class="fa-solid fa-file-invoice-dollar"></i> Payslips</a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <p><i class="fa-solid fa-shield-check"></i> v4.2 Secure Core</p>
+            <p>© 2026 PayRoll Edge Inc.</p>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="header">
+            <div>
+                <h2>Welcome Back, Alex Rivera</h2>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Lead Developer • Engineering Dept</p>
+            </div>
+            <div class="user-controls">
+                <div class="security-badge">
+                    <i class="fa-solid fa-face-viewfinder"></i> FaceID Verified
+                </div>
+                <button class="btn-outline" onclick="location.reload()"><i class="fa-solid fa-rotate"></i> Sync</button>
+            </div>
+        </header>
+
+        <div class="bento-grid">
+            
+            <div class="bento-box span-2 widget-accent">
+                <div class="box-title">Next Disbursement <span><i class="fa-solid fa-calendar"></i></span></div>
+                <div class="box-value">April 15, 2026</div>
+                <p style="opacity: 0.8;">Standard Monthly Pay Cycle • 8 Days Remaining</p>
+            </div>
+
+            <div class="bento-box">
+                <div class="box-title">Hours Logged <span><i class="fa-solid fa-stopwatch"></i></span></div>
+                <div class="box-value" id="hoursVal">84.5 <span class="unit">hrs</span></div>
+                <p style="color: var(--success); font-size: 0.85rem;"><i class="fa-solid fa-arrow-up"></i> 12% vs last month</p>
+            </div>
+
+            <div class="bento-box">
+                <div class="box-title">Est. Tax <span><i class="fa-solid fa-landmark"></i></span></div>
+                <div class="box-value" id="taxVal">$422.50</div>
+                <p style="color: var(--text-muted); font-size: 0.85rem;">Calculated at 20% flat rate</p>
+            </div>
+
+            <div class="bento-box span-2 row-2">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=500&q=80" alt="Work Stats" class="img-header">
+                <div class="box-title">Daily Time Tracking</div>
+                <form class="quick-form" id="timeForm">
+                    <label style="display:block; margin-bottom: 8px; font-weight:600; font-size: 0.85rem;">Select Date</label>
+                    <input type="date" id="dateIn">
+                    <label style="display:block; margin-bottom: 8px; font-weight:600; font-size: 0.85rem;">Hours Worked</label>
+                    <input type="number" id="hoursIn" placeholder="e.g. 8.5" step="0.5">
+                    <button type="submit" class="btn-action">Submit to Manager</button>
+                </form>
+            </div>
+
+            <div class="bento-box span-2 row-2">
+                <div class="box-title">Company Announcements <span><i class="fa-solid fa-bullhorn"></i></span></div>
+                
+                <div class="news-item">
+                    <h4>2026 Health Benefits Update</h4>
+                    <p>New dental and vision packages are now available for selection in the Employee Benefits portal.</p>
+                </div>
+
+                <div class="news-item">
+                    <h4>Regional Holiday Notice</h4>
+                    <p>April 9th (Araw ng Kagitingan) is a regular holiday. Office will be closed; payroll processing unaffected.</p>
+                </div>
+
+                <div class="news-item" style="border-left-color: var(--warning);">
+                    <h4>Security Audit in Progress</h4>
+                    <p>Annual biometric re-verification may be required for some users this week.</p>
+                </div>
+            </div>
+
+            <div class="bento-box">
+                <div class="box-title">Vacation Leave <span><i class="fa-solid fa-plane"></i></span></div>
+                <div class="box-value">12.0 <span class="unit">Days</span></div>
+                <p style="color: var(--warning); font-size: 0.85rem;">3 days expire in Dec</p>
+            </div>
+
+            <div class="bento-box">
+                <div class="box-title">Login Activity <span><i class="fa-solid fa-shield-halved"></i></span></div>
+                <p style="font-size: 0.85rem; margin-top: 10px;"><strong>Last IP:</strong> 112.204.1.84</p>
+                <p style="font-size: 0.85rem; color: var(--text-muted);">Location: Valenzuela, PH</p>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 5px;">Method: Fingerprint</p>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // Set default date
+        document.getElementById('dateIn').valueAsDate = new Date();
+
+        // Application State
+        let hoursLogged = 84.5;
+        const rate = 25.00;
+        const taxPercent = 0.20;
+
+        // Form Submission
+        document.getElementById('timeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const newHours = parseFloat(document.getElementById('hoursIn').value);
+            
+            if(newHours > 0) {
+                // Update State
+                hoursLogged += newHours;
+                
+                // Update UI
+                document.getElementById('hoursVal').innerHTML = `${hoursLogged.toFixed(1)} <span class="unit">hrs</span>`;
+                document.getElementById('taxVal').innerText = `$${((hoursLogged * rate) * taxPercent).toFixed(2)}`;
+                
+                // Feedback
+                const btn = this.querySelector('.btn-action');
+                const oldText = btn.innerText;
+                btn.innerText = "Entry Submitted!";
+                btn.style.background = "#27ae60";
+                
+                setTimeout(() => {
+                    btn.innerText = oldText;
+                    btn.style.background = "#003366";
+                    document.getElementById('hoursIn').value = "";
+                }, 2000);
+            }
+        });
+
+        // Simulating data sync
+        function syncData() {
+            console.log("PayRoll Edge: Establishing secure biometric handshake...");
+            // Realistically, you'd fetch from an API here
+        }
+        
+        syncData();
+    </script>
+</body>
+</html>

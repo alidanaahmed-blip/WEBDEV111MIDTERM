@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Payslips | PayRoll Edge</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo"><i class="fa-solid fa-fingerprint"></i> PayRoll<span>Edge</span></div>
+        <nav class="nav-menu">
+            <a href="dashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="staff.html"><i class="fa-solid fa-users"></i> Staff</a>
+            <a href="timesheets.html"><i class="fa-solid fa-clock"></i> Timesheets</a>
+            <a href="payslips.html" class="active"><i class="fa-solid fa-file-invoice-dollar"></i> Payslips</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header style="margin-bottom: 2rem;">
+            <h2>Financial Statements</h2>
+            <div class="badge" style="background:#d1e7dd; color:#0f5132;"><i class="fa-solid fa-shield"></i> End-to-End Encrypted</div>
+        </header>
+
+        <div class="bento-grid">
+            <div class="bento-box span-2" style="background: linear-gradient(135deg, var(--navy-dark), var(--navy-medium)); color: white;">
+                <div class="box-title" style="color: rgba(255,255,255,0.7);">Year-to-Date Net</div>
+                <div class="box-value" style="color: white;">$24,500.00</div>
+                <p style="font-size: 0.8rem; margin-top: 10px;">Tax Deducted YTD: $4,900.00</p>
+            </div>
+
+            <div class="bento-box span-2">
+                <div class="box-title">Security Check</div>
+                <p style="font-size: 0.9rem; margin-bottom: 15px;">Unlock sensitive PDF documents using biometrics:</p>
+                <div style="display:flex; gap: 10px;">
+                    <button class="btn-primary" style="background: var(--navy-dark); width: auto;" onclick="alert('FaceID Verified')"><i class="fa-solid fa-user-shield"></i> FaceID</button>
+                    <button class="btn-primary" style="background: var(--navy-dark); width: auto;" onclick="alert('Fingerprint Verified')"><i class="fa-solid fa-fingerprint"></i> TouchID</button>
+                </div>
+            </div>
+
+            <div class="bento-box span-4">
+                <div class="box-title">Recent Payslips</div>
+                <div style="display: flex; justify-content: space-between; padding: 15px; border-bottom: 1px solid #eee; align-items: center;">
+                    <div><strong>March 2026</strong><br><small>Period: 01/03 - 31/03</small></div>
+                    <div><strong>$4,250.00</strong></div>
+                    <button class="btn-primary" style="width: auto; padding: 8px 15px;">Download PDF</button>
+                </div>
+                <div style="display: flex; justify-content: space-between; padding: 15px; border-bottom: 1px solid #eee; align-items: center;">
+                    <div><strong>February 2026</strong><br><small>Period: 01/02 - 28/02</small></div>
+                    <div><strong>$4,250.00</strong></div>
+                    <button class="btn-primary" style="width: auto; padding: 8px 15px;">Download PDF</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

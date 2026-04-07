@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | PayRoll Edge Secure</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific overrides for the Login Page to ensure "Corporate Solid" feel */
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--navy-dark); /* Solid Navy Background */
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .login-container {
+            display: flex;
+            background: white;
+            width: 900px;
+            height: 550px;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+        }
+
+        /* Branding Side */
+        .login-branding {
+            flex: 1;
+            background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-medium) 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .login-branding i {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            color: var(--accent-blue);
+        }
+
+        /* Form Side */
+        .login-form-section {
+            flex: 1.2;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .login-header {
+            margin-bottom: 30px;
+        }
+
+        .login-header h2 {
+            color: var(--navy-dark);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .biometric-options {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid #eee;
+        }
+
+        .btn-bio-login {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid var(--navy-medium);
+            background: transparent;
+            color: var(--navy-medium);
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+
+        .btn-bio-login:hover {
+            background: var(--navy-medium);
+            color: white;
+        }
+
+        .divider {
+            text-align: center;
+            margin: 20px 0;
+            color: #aaa;
+            position: relative;
+        }
+
+        .divider::before, .divider::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            height: 1px;
+            background: #eee;
+        }
+        .divider::before { left: 0; }
+        .divider::after { right: 0; }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <div class="login-branding">
+            <i class="fa-solid fa-fingerprint"></i>
+            <h1>PayRoll Edge</h1>
+            <p style="opacity: 0.8; margin-top: 15px;">Enterprise-grade security for your corporate financial data.</p>
+        </div>
+
+        <div class="login-form-section">
+            <div class="login-header">
+                <h2>Secure Access</h2>
+                <p style="color: #666;">Please verify your identity to continue.</p>
+            </div>
+
+            <form action="dashboard.html" onsubmit="window.location.href='dashboard.html'; return false;">
+                <div class="input-group">
+                    <label>Employee ID</label>
+                    <input type="text" placeholder="PE-XXXX" required>
+                </div>
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="btn-submit">Login to Dashboard</button>
+            </form>
+
+            <div class="divider">OR</div>
+
+            <div class="biometric-options">
+                <button class="btn-bio-login" onclick="alert('Scanning FaceID...')">
+                    <i class="fa-solid fa-user-shield"></i> FaceID
+                </button>
+                <button class="btn-bio-login" onclick="alert('Waiting for Fingerprint...')">
+                    <i class="fa-solid fa-fingerprint"></i> TouchID
+                </button>
+            </div>
+
+            <p style="text-align: center; margin-top: 20px; font-size: 0.85rem;">
+                <a href="#" style="color: var(--navy-medium); text-decoration: none;">Forgot credentials?</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>

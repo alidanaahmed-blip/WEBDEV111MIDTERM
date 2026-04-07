@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Directory | PayRoll Edge</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="logo"><i class="fa-solid fa-fingerprint"></i> PayRoll<span>Edge</span></div>
+        <nav class="nav-menu">
+            <a href="dashboard.html"><i class="fa-solid fa-house"></i> Dashboard</a>
+            <a href="staff.html" class="active"><i class="fa-solid fa-users"></i> Staff</a>
+            <a href="timesheets.html"><i class="fa-solid fa-clock"></i> Timesheets</a>
+            <a href="payslips.html"><i class="fa-solid fa-file-invoice-dollar"></i> Payslips</a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header style="margin-bottom: 2rem;">
+            <h2>Workforce Management</h2>
+            <p style="color: var(--text-muted);">Current Active Personnel: 128</p>
+        </header>
+
+        <div class="bento-grid">
+            <div class="bento-box">
+                <div class="box-title">Total Headcount</div>
+                <div class="box-value">142</div>
+            </div>
+            <div class="bento-box">
+                <div class="box-title">On-Leave</div>
+                <div class="box-value" style="color: var(--warning);">12</div>
+            </div>
+            <div class="bento-box span-2">
+                <div class="box-title">Department Distribution</div>
+                <div style="display:flex; gap:8px; margin-top:10px;">
+                    <span class="badge" style="background:#eef2f6;">Eng: 40%</span>
+                    <span class="badge" style="background:#eef2f6;">Sales: 30%</span>
+                    <span class="badge" style="background:#eef2f6;">Ops: 20%</span>
+                </div>
+            </div>
+
+            <div class="bento-box span-4">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr style="text-align: left; border-bottom: 2px solid var(--bg-color); color: var(--navy-medium);">
+                            <th style="padding: 15px;">Employee Name</th>
+                            <th>Department</th>
+                            <th>Status</th>
+                            <th>Last Active</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #f8f9fa;">
+                            <td style="padding: 15px; display: flex; align-items: center; gap: 10px;">
+                                <img src="https://ui-avatars.com/api/?name=Alex+Rivera&background=001f3f&color=fff" style="width: 30px; border-radius: 6px;">
+                                <strong>Alex Rivera</strong>
+                            </td>
+                            <td>Engineering</td>
+                            <td><span class="badge badge-success">Active</span></td>
+                            <td>Just Now</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f8f9fa;">
+                            <td style="padding: 15px; display: flex; align-items: center; gap: 10px;">
+                                <img src="https://ui-avatars.com/api/?name=Sarah+Chen&background=001f3f&color=fff" style="width: 30px; border-radius: 6px;">
+                                <strong>Sarah Chen</strong>
+                            </td>
+                            <td>Finance</td>
+                            <td><span class="badge badge-success">Active</span></td>
+                            <td>2h ago</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
