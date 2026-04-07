@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Events | Tickets</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="tickets">
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html" aria-label="Nexus Events home">
+        <span class="brand__logo" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 6L36.5 18.5L49 14L44.5 26.5L58 32L44.5 37.5L49 50L36.5 45.5L32 58L27.5 45.5L15 50L19.5 37.5L6 32L19.5 26.5L15 14L27.5 18.5L32 6Z" fill="#FFE45E" stroke="#07020F" stroke-width="3"/>
+            <path d="M22 43V21L32 32L42 21V43" stroke="#07020F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="32" cy="32" r="3.5" fill="#FF4FD8" stroke="#07020F" stroke-width="2"/>
+          </svg>
+        </span>
+        <span class="brand__text">
+          <span class="brand__name">Nexus Events</span>
+          <span class="brand__sub">NEON CITY NIGHTS</span>
+        </span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="events.html" data-nav="events">Events</a>
+        <a href="tickets.html" data-nav="tickets">Tickets</a>
+        <a href="venue.html" data-nav="venue">Venue</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+        <a href="admin-login.html" data-nav="admin">Admin</a>
+      </nav>
+      <a class="btn btn--big btn--alt" href="#ticket-builder">Build Your Pass</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="section-heading-row">
+      <h1 class="section-title">Build Your Neon Pass</h1>
+      <a class="btn btn--ghost" href="events.html">Back To Events</a>
+    </div>
+
+    <section id="ticket-builder" class="ticket-builder-grid">
+      <div class="panel ticket-builder-panel">
+        <p class="flow-intro">Choose the show, stack your tickets, then generate a QR preview for your entry lane.</p>
+
+        <div class="form-grid">
+          <label>
+            Selected Event
+            <select data-selected-event>
+              <option>Electric Mirage</option>
+              <option>Glow Bite Alley</option>
+              <option>Laser Bloom Lab</option>
+              <option>Starlight Circuit</option>
+              <option>Pixel Pulse Arcade</option>
+              <option>Afterflash Finale</option>
+            </select>
+          </label>
+          <label>
+            Event Date
+            <select data-selected-date>
+              <option>Friday, April 25</option>
+              <option>Friday, April 25</option>
+              <option>Saturday, April 26</option>
+              <option>Saturday, April 26</option>
+              <option>Sunday, April 27</option>
+              <option>Sunday, April 27</option>
+            </select>
+          </label>
+        </div>
+
+        <h2 class="section-subtitle">Pass Tiers</h2>
+        <div class="ticket-row" data-ticket-row data-tier="Glow Pass" data-price="39">
+          <div>
+            <strong>Glow Pass</strong>
+            <p>General access to the selected show plus food alley and shared photo zones.</p>
+          </div>
+          <div class="qty-control">
+            <button type="button" data-qty-minus>-</button>
+            <input type="text" value="1" data-qty>
+            <button type="button" data-qty-plus>+</button>
+          </div>
+          <div>$39 each</div>
+        </div>
+        <div class="ticket-row" data-ticket-row data-tier="Flash Pass" data-price="79">
+          <div>
+            <strong>Flash Pass</strong>
+            <p>Priority line, lounge seating, and one signature drink or dessert redemption.</p>
+          </div>
+          <div class="qty-control">
+            <button type="button" data-qty-minus>-</button>
+            <input type="text" value="0" data-qty>
+            <button type="button" data-qty-plus>+</button>
+          </div>
+          <div>$79 each</div>
+        </div>
+        <div class="ticket-row" data-ticket-row data-tier="Nova VIP" data-price="129">
+          <div>
+            <strong>Nova VIP</strong>
+            <p>Fast-track entry, sky deck access, merch token, and best-view platform privileges.</p>
+          </div>
+          <div class="qty-control">
+            <button type="button" data-qty-minus>-</button>
+            <input type="text" value="0" data-qty>
+            <button type="button" data-qty-plus>+</button>
+          </div>
+          <div>$129 each</div>
+        </div>
+
+        <div class="total-box total-box--large">
+          Total: <span data-total>$39.00</span>
+        </div>
+
+        <h2 class="section-subtitle">Attendee Info</h2>
+        <form class="form-grid form-grid--full" data-ticket-form>
+          <label>
+            Full Name
+            <input type="text" placeholder="Your full name" data-attendee-name required>
+          </label>
+          <label>
+            Email
+            <input type="email" placeholder="you@email.com" data-attendee-email required>
+          </label>
+          <label>
+            Phone
+            <input type="text" placeholder="+1 (555) 000-0000" data-attendee-phone>
+          </label>
+          <label>
+            Notes
+            <textarea placeholder="Accessibility requests, birthday note, or group details" data-attendee-notes></textarea>
+          </label>
+          <button class="btn btn--big btn--lime" type="submit">Generate Entry Code</button>
+        </form>
+      </div>
+
+      <aside class="panel qr-panel">
+        <p class="qr-kicker">Step 4</p>
+        <h2 class="section-title qr-title">QR Pass Preview</h2>
+        <div class="qr-box">
+          <canvas width="220" height="220" data-qr-canvas></canvas>
+        </div>
+        <div class="pass-summary">
+          <p><strong>Event:</strong> <span data-pass-event>Electric Mirage</span></p>
+          <p><strong>Tier:</strong> <span data-pass-tier>Glow Pass x1</span></p>
+          <p><strong>Name:</strong> <span data-pass-name>Waiting for attendee info</span></p>
+          <p><strong>Pass Code:</strong> <span data-pass-code>Generate to reveal</span></p>
+        </div>
+        <p class="form-note" data-ticket-status>Fill in your attendee details and generate a bright little demo pass.</p>
+      </aside>
+    </section>
+
+    <div class="button-row buy-row-bottom">
+      <a class="btn btn--big" href="events.html">Pick Another Show</a>
+      <a class="btn btn--big btn--alt" href="contact.html">Need Group Booking?</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="pill">Nexus Events · Ticket Builder</p>
+      <p>© <span data-year></span> Nexus Events. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
+

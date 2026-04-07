@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Events | Events</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="events">
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html" aria-label="Nexus Events home">
+        <span class="brand__logo" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M32 6L36.5 18.5L49 14L44.5 26.5L58 32L44.5 37.5L49 50L36.5 45.5L32 58L27.5 45.5L15 50L19.5 37.5L6 32L19.5 26.5L15 14L27.5 18.5L32 6Z" fill="#FFE45E" stroke="#07020F" stroke-width="3"/>
+            <path d="M22 43V21L32 32L42 21V43" stroke="#07020F" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="32" cy="32" r="3.5" fill="#FF4FD8" stroke="#07020F" stroke-width="2"/>
+          </svg>
+        </span>
+        <span class="brand__text">
+          <span class="brand__name">Nexus Events</span>
+          <span class="brand__sub">NEON CITY NIGHTS</span>
+        </span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="events.html" data-nav="events">Events</a>
+        <a href="tickets.html" data-nav="tickets">Tickets</a>
+        <a href="venue.html" data-nav="venue">Venue</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+        <a href="admin-login.html" data-nav="admin">Admin</a>
+      </nav>
+      <a class="btn btn--big btn--alt" href="tickets.html">Jump To Passes</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="section-heading-row">
+      <h1 class="section-title">Choose Your Neon Night</h1>
+      <a class="btn btn--ghost" href="tickets.html">Open Ticket Builder</a>
+    </div>
+    <div class="panel">
+      <p class="flow-intro">Each event card saves your show and carries it to the ticket page automatically.</p>
+      <div class="filter-bar">
+        <input type="text" placeholder="Search by show, zone, or vibe" data-search>
+        <div class="filter-buttons">
+          <button type="button" class="active" data-filter="all">All</button>
+          <button type="button" data-filter="music">Music</button>
+          <button type="button" data-filter="food">Food</button>
+          <button type="button" data-filter="art">Art</button>
+          <button type="button" data-filter="party">Party</button>
+        </div>
+      </div>
+      <div class="grid">
+        <article class="card" data-event-card data-event-name="Electric Mirage" data-tags="music party synth main-stage">
+          <span class="badge">Apr 25</span>
+          <h3>Electric Mirage</h3>
+          <p>Massive synth-pop opener with giant screens, laser curtains, and bright singalong hooks.</p>
+          <div class="tag-row">
+            <span class="tag">Music</span>
+            <span class="tag">Main Stage</span>
+          </div>
+          <a class="btn btn--ghost" href="tickets.html">Choose Show</a>
+        </article>
+        <article class="card" data-event-card data-event-name="Glow Bite Alley" data-tags="food market street late-night">
+          <span class="badge">Apr 25</span>
+          <h3>Glow Bite Alley</h3>
+          <p>Late-night food street with neon carts, DJ pockets, and dessert bars hidden in color tunnels.</p>
+          <div class="tag-row">
+            <span class="tag">Food</span>
+            <span class="tag">Night Market</span>
+          </div>
+          <a class="btn btn--ghost" href="tickets.html">Choose Show</a>
+        </article>
+        <article class="card" data-event-card data-event-name="Laser Bloom Lab" data-tags="art immersive light installation">
+          <span class="badge">Apr 26</span>
+          <h3>Laser Bloom Lab</h3>
+          <p>Walk-through art dome packed with reactive beams, mirrored textures, and photo-ready light blooms.</p>
+          <div class="tag-row">
+            <span class="tag">Art</span>
+            <span class="tag">Immersive</span>
+          </div>
+          <a class="btn btn--ghost" href="tickets.html">Choose Show</a>
+        </article>
+        <article class="card" data-event-card data-event-name="Starlight Circuit" data-tags="music party dance rooftop">
+          <span class="badge">Apr 26</span>
+          <h3>Starlight Circuit</h3>
+          <p>Rooftop dance sprint with quick-switch DJs, silver visuals, and skyline strobes.</p>
+          <div class="tag-row">
+            <span class="tag">Party</span>
+            <span class="tag">Rooftop</span>
+          </div>
+          <a class="btn btn--ghost" href="tickets.html">Choose Show</a>
+        </article>
+        <article class="card" data-event-card data-event-name="Pixel Pulse Arcade" data-tags="art party games retro">
+          <span class="badge">Apr 27</span>
+          <h3>Pixel Pulse Arcade</h3>
+          <p>Retro-future play zone with projection games, beat-reactive scoreboards, and cosplay corners.</p>
+          <div class="tag-row">
+            <span class="tag">Arcade</span>
+            <span class="tag">Interactive</span>
+          </div>
+          <a class="btn btn--ghost" href="tickets.html">Choose Show</a>
+        </article>
+        <article class="card" data-event-card data-event-name="Afterflash Finale" data-tags="music party closing fireworks">
+          <span class="badge">Apr 27</span>
+          <h3>Afterflash Finale</h3>
+          <p>Closing night burst with guest vocalists, color cannons, and a full-campus countdown moment.</p>
+          <div class="tag-row">
+            <span class="tag">Finale</span>
+            <span class="tag">Live Show</span>
+          </div>
+          <a class="btn btn--ghost" href="tickets.html">Choose Show</a>
+        </article>
+      </div>
+    </div>
+
+    <div class="button-row buy-row-bottom">
+      <a class="btn btn--big btn--lime" href="tickets.html">Continue To Tickets</a>
+      <a class="btn btn--big btn--alt" href="venue.html">See The Venue Map</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="pill">Nexus Events · Lineup Planner</p>
+      <p>© <span data-year></span> Nexus Events. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
+
