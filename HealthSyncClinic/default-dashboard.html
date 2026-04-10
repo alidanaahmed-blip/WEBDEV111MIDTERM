@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Default Dashboard | HealthSync Clinic</title>
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body data-protected-role="default">
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <header class="portal-header">
+    <div class="brand-block">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="8" width="48" height="48" rx="16" fill="white" fill-opacity="0.15"/>
+          <path d="M32 16L36.8 26.2L48 28L40 35.8L41.9 47L32 41.6L22.1 47L24 35.8L16 28L27.2 26.2L32 16Z" fill="white"/>
+          <path d="M24 32H40" stroke="#1F6FB2" stroke-width="4" stroke-linecap="round"/>
+          <path d="M32 24V40" stroke="#1F6FB2" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <p class="eyebrow">Operations Overview</p>
+        <h1>HealthSync Clinic</h1>
+      </div>
+    </div>
+    <nav class="header-nav">
+      <a class="nav-link" href="index.html">Public Website</a>
+      <a class="nav-link" href="login.html">Switch Account</a>
+      <button class="logout-button" type="button" data-logout>Log Out</button>
+    </nav>
+  </header>
+
+  <main class="portal-shell">
+    <section class="portal-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Shared Overview</p>
+        <h2>Welcome, <span data-auth-name></span>.</h2>
+        <p>
+          You are signed in as <strong><span data-auth-role></span></strong> with username <strong><span data-auth-username></span></strong>. This dashboard offers a general view of appointments, staffing readiness, and portal activity.
+        </p>
+      </div>
+
+      <div class="hero-side">
+        <div class="mini-stat"><span>Branches Monitored</span><strong>4</strong></div>
+        <div class="mini-stat"><span>System Status</span><strong>Operational</strong></div>
+        <div class="mini-stat"><span>Portal Security</span><strong>Verified</strong></div>
+      </div>
+    </section>
+
+    <section class="metric-grid">
+      <article class="metric-card"><span>Today's Requests</span><strong>38</strong><p>Combined appointment activity across the clinic network.</p></article>
+      <article class="metric-card"><span>Doctor Coverage</span><strong>Complete</strong><p>Each core specialty has at least one clinician available this week.</p></article>
+      <article class="metric-card"><span>Unread Notices</span><strong>3</strong><p>Shared messages are ready for review across portal roles.</p></article>
+    </section>
+
+    <section class="panel-grid">
+      <article class="panel">
+        <p class="eyebrow">Clinic Snapshot</p>
+        <h3>What this role can view</h3>
+        <div class="info-list">
+          <div class="list-item"><strong>Operations Summary</strong><small>Live overview</small><p>See booking volume, staff readiness, and current service demand.</p></div>
+          <div class="list-item"><strong>Shared Notices</strong><small>Cross-team updates</small><p>Review announcements, schedule changes, and clinic reminders.</p></div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <p class="eyebrow">Latest Registration</p>
+        <h3>Newest patient request</h3>
+        <div data-latest-booking></div>
+      </article>
+
+      <article class="panel">
+        <p class="eyebrow">Quick Access</p>
+        <h3>Useful next steps</h3>
+        <div class="task-list">
+          <div class="task-item"><strong>Open the public registration form</strong><p>Return to the website and submit another test appointment request.</p></div>
+          <div class="task-item"><strong>Switch to a role dashboard</strong><p>Compare admin, staff, and member views from the login page.</p></div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>

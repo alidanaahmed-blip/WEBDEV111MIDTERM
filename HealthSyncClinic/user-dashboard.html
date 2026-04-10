@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard | HealthSync Clinic</title>
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body data-protected-role="user">
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <header class="portal-header">
+    <div class="brand-block">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="8" width="48" height="48" rx="16" fill="white" fill-opacity="0.15"/>
+          <path d="M32 16L36.8 26.2L48 28L40 35.8L41.9 47L32 41.6L22.1 47L24 35.8L16 28L27.2 26.2L32 16Z" fill="white"/>
+          <path d="M24 32H40" stroke="#1F6FB2" stroke-width="4" stroke-linecap="round"/>
+          <path d="M32 24V40" stroke="#1F6FB2" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <p class="eyebrow">Member Dashboard</p>
+        <h1>HealthSync Clinic</h1>
+      </div>
+    </div>
+    <nav class="header-nav">
+      <a class="nav-link" href="index.html">Public Website</a>
+      <a class="nav-link" href="login.html">Switch Account</a>
+      <button class="logout-button" type="button" data-logout>Log Out</button>
+    </nav>
+  </header>
+
+  <main class="portal-shell">
+    <section class="portal-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Patient Access</p>
+        <h2>Welcome back, <span data-auth-name></span>.</h2>
+        <p>
+          You are logged in as <strong><span data-auth-role></span></strong>. Use this member dashboard to review upcoming appointments, profile details, and your latest registration status.
+        </p>
+      </div>
+
+      <div class="hero-side">
+        <div class="mini-stat"><span>Profile Completion</span><strong>98%</strong></div>
+        <div class="mini-stat"><span>Upcoming Visits</span><strong>2</strong></div>
+        <div class="mini-stat"><span>Secure Messages</span><strong>1</strong></div>
+      </div>
+    </section>
+
+    <section class="metric-grid">
+      <article class="metric-card"><span>Next Appointment</span><strong>Apr 14</strong><p>Your next mock visit is scheduled as an afternoon follow-up.</p></article>
+      <article class="metric-card"><span>Care Notes</span><strong>4</strong><p>Recent summaries and after-visit notes are available to review.</p></article>
+      <article class="metric-card"><span>Booking Status</span><strong>Ready</strong><p>You can submit a new request whenever you need another visit.</p></article>
+    </section>
+
+    <section class="panel-grid">
+      <article class="panel">
+        <p class="eyebrow">Latest Registration</p>
+        <h3>Your most recent request</h3>
+        <div data-latest-booking></div>
+      </article>
+
+      <article class="panel">
+        <p class="eyebrow">Profile Summary</p>
+        <h3>Member details</h3>
+        <div class="info-list">
+          <div class="list-item"><strong>Signed in account</strong><small><span data-auth-username></span></small><p>Your contact details and preferred communication method are active.</p></div>
+          <div class="list-item"><strong>Preferred branch</strong><small>Central Branch</small><p>Future requests are usually routed to your saved location preference.</p></div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <p class="eyebrow">Quick Actions</p>
+        <h3>What you can do next</h3>
+        <div class="task-list">
+          <div class="task-item"><strong>Register another appointment</strong><p>Use the step-by-step form to select a service, clinician, date, and time.</p></div>
+          <div class="task-item"><strong>Review upcoming reminders</strong><p>Stay ready for your next visit with current schedule details.</p></div>
+          <div class="task-item"><a class="action-link" href="index.html#book">Open Registration Wizard</a></div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Dashboard | HealthSync Clinic</title>
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body data-protected-role="staff">
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <header class="portal-header">
+    <div class="brand-block">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="8" width="48" height="48" rx="16" fill="white" fill-opacity="0.15"/>
+          <path d="M32 16L36.8 26.2L48 28L40 35.8L41.9 47L32 41.6L22.1 47L24 35.8L16 28L27.2 26.2L32 16Z" fill="white"/>
+          <path d="M24 32H40" stroke="#1F6FB2" stroke-width="4" stroke-linecap="round"/>
+          <path d="M32 24V40" stroke="#1F6FB2" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <p class="eyebrow">Staff Dashboard</p>
+        <h1>HealthSync Clinic</h1>
+      </div>
+    </div>
+    <nav class="header-nav">
+      <a class="nav-link" href="index.html">Public Website</a>
+      <a class="nav-link" href="login.html">Switch Account</a>
+      <button class="notification-button" type="button" aria-label="Staff notifications">Notifications <span class="notification-badge">3</span></button>
+      <button class="logout-button" type="button" data-logout>Log Out</button>
+    </nav>
+  </header>
+
+  <main class="portal-shell">
+   <section class="portal-hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Front-Line Coordination</p>
+    <h2>Let’s keep the flow smooth, <span data-auth-name></span>.</h2>
+    <p>You have <strong>19 check-ins</strong> on the horizon. Your dashboard is primed for same-day patient flow management.</p>
+  </div>
+</section>
+
+<section class="metric-grid">
+  <article class="metric-card"><span>Lobby Pulse</span><strong>6</strong><p>Guests currently being staged for check-in or room assignment.</p></article>
+  <article class="metric-card"><span>Efficiency Score</span><strong>11 min</strong><p>Turnaround time remains within the clinic's premium target.</p></article>
+</section>
+
+    <section class="metric-grid">
+      <article class="metric-card"><span>Waiting Patients</span><strong>6</strong><p>Current lobby load needing check-in or room assignment support.</p></article>
+      <article class="metric-card"><span>Open Tasks</span><strong>9</strong><p>Preparation items and callbacks remain in the shift queue.</p></article>
+      <article class="metric-card"><span>Average Delay</span><strong>11 min</strong><p>The current wait time remains within the clinic target.</p></article>
+    </section>
+
+    <section class="panel notification-center">
+      <p class="eyebrow">Notification Center</p>
+      <div class="notification-header">
+        <h3>Staff alerts for this shift</h3>
+        <span class="notification-summary">3 unread</span>
+      </div>
+      <div class="notification-list">
+        <div class="notification-item unread"><div class="notification-dot" aria-hidden="true"></div><div><strong>Patient in room 2 is ready for vitals.</strong><p>The chart is open and the assigned nurse is waiting for intake support.</p></div><span class="notification-time">3 min ago</span></div>
+        <div class="notification-item unread"><div class="notification-dot" aria-hidden="true"></div><div><strong>A new registration reached the front desk queue.</strong><p>Review the latest booking details and prepare notes if it is confirmed.</p></div><span class="notification-time">14 min ago</span></div>
+        <div class="notification-item unread"><div class="notification-dot" aria-hidden="true"></div><div><strong>Orthopedic imaging upload is still incomplete.</strong><p>Remind the patient before the afternoon consultation begins.</p></div><span class="notification-time">29 min ago</span></div>
+      </div>
+    </section>
+
+    <section class="panel-grid">
+      <article class="panel">
+        <p class="eyebrow">Front Desk Queue</p>
+        <h3>Immediate tasks</h3>
+        <div class="task-list">
+          <div class="task-item"><strong>Prepare room 3 for pediatrics</strong><p>Vaccination supplies and intake sheets are needed before 1:30 PM.</p></div>
+          <div class="task-item"><strong>Call back two reschedule requests</strong><p>Both members requested earlier morning slots after availability changed.</p></div>
+          <div class="task-item"><strong>Confirm imaging uploads</strong><p>One file is still missing from the packet for the afternoon visit.</p></div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <p class="eyebrow">Latest Registration</p>
+        <h3>Request likely to reach the front desk</h3>
+        <div data-latest-booking></div>
+      </article>
+
+      <article class="panel">
+        <p class="eyebrow">Shift Notes</p>
+        <h3>Care coordination reminders</h3>
+        <div class="info-list">
+          <div class="list-item"><strong>Insurance Recheck</strong><small>1 member flagged</small><p>Verify policy renewal before printing discharge paperwork.</p></div>
+          <div class="list-item"><strong>Doctor Hand-off</strong><small>Cardiology to Dermatology</small><p>Late morning demand may need room rebalancing between teams.</p></div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>

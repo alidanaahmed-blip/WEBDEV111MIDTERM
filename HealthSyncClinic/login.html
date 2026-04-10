@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthSync Clinic | Portal Login</title>
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body data-page="login">
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <header class="portal-header">
+    <a class="brand-block" href="index.html" aria-label="HealthSync Clinic home">
+      <img class="brand-logo" src="assets/healthsync-logo.svg" alt="HealthSync Clinic logo">
+      <div>
+        <p class="eyebrow">Verified Member Portal</p>
+        <h1>HealthSync Clinic</h1>
+      </div>
+    </a>
+
+    <nav class="header-nav">
+      <a class="nav-link" href="index.html">Back to Home</a>
+      <button class="logout-button" type="button" data-logout>Clear Session</button>
+    </nav>
+  </header>
+
+  <main class="portal-shell">
+    <section class="welcome-card">
+      <div class="welcome-copy">
+        <p class="eyebrow">Trust-Blue Access</p>
+        <h2>Sign in to a secure, and professional clinic portal.</h2>
+        <p class="support-copy">
+          Demo access is available for overview, admin, staff, and member accounts so you can explore the full HealthSync Clinic experience.
+        </p>
+        <div class="helper-row">
+          <a class="action-link" href="index.html#book">Book an Appointment</a>
+          <a class="ghost-link" href="index.html">Return Home</a>
+        </div>
+      </div>
+
+      <div class="welcome-side">
+        <div class="mini-stat">
+          <span>Portal Accounts</span>
+          <strong>4</strong>
+        </div>
+        <div class="mini-stat">
+          <span>Status</span>
+          <strong>Verified Access</strong>
+        </div>
+        <div class="mini-stat">
+          <span>Clinic Theme</span>
+          <strong>Trust-Blue</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="login-layout">
+      <article class="login-panel">
+        <p class="eyebrow">Portal Login</p>
+        <h2>Enter your username and password.</h2>
+        <p class="helper-text">Use a sample account below or tap one to auto-fill the form.</p>
+
+        <form id="loginForm">
+          <div class="field-group">
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" placeholder="Enter username" autocomplete="username">
+          </div>
+
+          <div class="field-group">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="Enter password" autocomplete="current-password">
+          </div>
+
+          <button class="submit-button" type="submit">Login to Dashboard</button>
+          <p id="loginStatus" class="status-note" data-state="idle"></p>
+        </form>
+
+        <div class="helper-row">
+          <p id="currentSession" class="helper-text" hidden></p>
+          <button id="continueSession" class="ghost-link" type="button" hidden>Continue Current Session</button>
+        </div>
+      </article>
+
+      <section>
+        <p class="eyebrow">Demo Credentials</p>
+        <div id="accountGrid" class="account-grid"></div>
+      </section>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>

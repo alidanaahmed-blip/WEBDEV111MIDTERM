@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | HealthSync Clinic</title>
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body data-protected-role="admin">
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <header class="portal-header">
+    <div class="brand-block">
+      <div class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="8" width="48" height="48" rx="16" fill="white" fill-opacity="0.15"/>
+          <path d="M32 16L36.8 26.2L48 28L40 35.8L41.9 47L32 41.6L22.1 47L24 35.8L16 28L27.2 26.2L32 16Z" fill="white"/>
+          <path d="M24 32H40" stroke="#1F6FB2" stroke-width="4" stroke-linecap="round"/>
+          <path d="M32 24V40" stroke="#1F6FB2" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div>
+        <p class="eyebrow">Admin Dashboard</p>
+        <h1>HealthSync Clinic</h1>
+      </div>
+    </div>
+    <nav class="header-nav">
+      <a class="nav-link" href="index.html">Public Website</a>
+      <a class="nav-link" href="login.html">Switch Account</a>
+      <button class="notification-button" type="button" aria-label="Admin notifications">Notifications <span class="notification-badge">4</span></button>
+      <button class="logout-button" type="button" data-logout>Log Out</button>
+    </nav>
+  </header>
+
+  <main class="portal-shell">
+   <section class="portal-hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Operational Intelligence</p>
+    <h2>Welcome back, Commander of Care.</h2>
+    <p>You're overseeing <strong>Central Branch</strong> today with 12 team members active and ready to assist.</p>
+  </div>
+</section>
+
+<section class="metric-grid">
+  <article class="metric-card"><span>Availability Sync</span><strong>5</strong><p>Clinician availability changes are verified and ready for deployment.</p></article>
+  <article class="metric-card"><span>Access Requests</span><strong>8</strong><p>Registration requests are awaiting the final green light.</p></article>
+</section>
+
+    <section class="metric-grid">
+      <article class="metric-card"><span>Schedule Updates</span><strong>5</strong><p>Clinician availability changes are ready for publishing.</p></article>
+      <article class="metric-card"><span>Approval Queue</span><strong>8</strong><p>Registration requests still need final review before confirmation.</p></article>
+      <article class="metric-card"><span>Records Updated</span><strong>14</strong><p>Patient files and internal notes were changed during the current shift.</p></article>
+    </section>
+
+    <section class="panel notification-center">
+      <p class="eyebrow">Notification Center</p>
+      <div class="notification-header">
+        <h3>Admin alerts requiring attention</h3>
+        <span class="notification-summary">4 unread</span>
+      </div>
+      <div class="notification-list">
+        <div class="notification-item unread"><div class="notification-dot" aria-hidden="true"></div><div><strong>8 registration approvals are still pending.</strong><p>Three same-day requests are waiting for branch review before noon.</p></div><span class="notification-time">5 min ago</span></div>
+        <div class="notification-item unread"><div class="notification-dot" aria-hidden="true"></div><div><strong>Dr. Mendoza updated cardiology availability.</strong><p>Friday afternoon openings are ready to publish to staff and members.</p></div><span class="notification-time">18 min ago</span></div>
+        <div class="notification-item unread"><div class="notification-dot" aria-hidden="true"></div><div><strong>Insurance verification mismatch was flagged.</strong><p>One member account needs manual confirmation before check-in completes.</p></div><span class="notification-time">42 min ago</span></div>
+        <div class="notification-item"><div class="notification-dot" aria-hidden="true"></div><div><strong>Two staff permission requests were submitted.</strong><p>Review role access before the next shift handover.</p></div><span class="notification-time">1 hr ago</span></div>
+      </div>
+    </section>
+
+    <section class="panel-grid">
+      <article class="panel">
+        <p class="eyebrow">Priority Actions</p>
+        <h3>Admin focus list</h3>
+        <div class="task-list">
+          <div class="task-item"><strong>Approve same-day registrations</strong><p>Three requests need clinician reassignment before noon.</p></div>
+          <div class="task-item"><strong>Publish Friday availability</strong><p>Cardiology and pediatrics openings are waiting for final review.</p></div>
+          <div class="task-item"><strong>Verify new staff permissions</strong><p>Two onboarding accounts still require role validation.</p></div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <p class="eyebrow">Latest Registration</p>
+        <h3>Newest patient request</h3>
+        <div data-latest-booking></div>
+      </article>
+
+      <article class="panel">
+        <p class="eyebrow">Daily Snapshot</p>
+        <h3>Operational notes</h3>
+        <div class="info-list">
+          <div class="list-item"><strong>Doctor Coverage</strong><small>North and West branches</small><p>Orthopedics is fully covered. Dermatology needs one extra afternoon slot.</p></div>
+          <div class="list-item"><strong>Front Desk Escalations</strong><small>2 active items</small><p>One insurance mismatch and one duplicate booking require manual review.</p></div>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <script src="auth.js"></script>
+</body>
+</html>

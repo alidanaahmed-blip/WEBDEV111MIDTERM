@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthSync Clinic | Verified Medical Care</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-bg" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="brand-block" href="index.html" aria-label="HealthSync Clinic home">
+      <img class="brand-logo" src="assets/healthsync-logo.svg" alt="HealthSync Clinic logo">
+      <div>
+        <p class="eyebrow">Medical Availability</p>
+        <h1>HealthSync Clinic</h1>
+      </div>
+    </a>
+
+   <nav class="header-nav" aria-label="Primary">
+  <a class="nav-link" href="index.html#book">✨ Book</a>
+  <a class="nav-link" href="user-dashboard.html">📜 History</a>
+  <a class="nav-link" href="staff-dashboard.html">👩‍⚕️ Staff</a>
+  <a class="nav-link portal-btn" href="login.html">Member Portal</a>
+</nav>
+  </header>
+
+  <main class="layout">
+    <section class="hero card">
+      <div class="hero-copy">
+        <p class="eyebrow">Trust-Blue Care</p>
+        <h2>Calm, and professional clinic booking for everyday medical care.</h2>
+        <p class="hero-text">
+          HealthSync Clinic helps patients book visits, check staff availability, and review care history in one clean experience designed to feel friendly and verified from the first click.
+        </p>
+
+        <div class="hero-actions">
+          <a class="primary-link" href="#book">Register Now <span class="verified-badge">Verified</span></a>
+          <a class="secondary-link" href="login.html">Open Secure Portal</a>
+        </div>
+
+        <div class="hero-promise">
+          <div class="promise-card">
+            <strong>Medical Availability</strong>
+            <p>Live specialties, doctor schedules, and simple next steps for patients and staff.</p>
+          </div>
+          <div class="promise-card soft">
+            <strong>Clinic Navigation</strong>
+            <p>Quick access to Book, Staff, and History so the site feels easy to move through.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="visual-panel">
+          <img src="assets/clinic-hero.svg" alt="Friendly medical team welcoming a patient in a bright clinic">
+        </div>
+
+        <div class="hero-stat-grid">
+          <div class="hero-stat">
+            <span>Verified Doctors</span>
+            <strong id="heroDoctorCount">0</strong>
+          </div>
+          <div class="hero-stat">
+            <span>Pending Requests</span>
+            <strong id="heroPendingCount">0</strong>
+          </div>
+          <div class="hero-stat callout">
+            <span>HealthSync Promise</span>
+            <strong>White, clean, trust-blue booking with gentle visual warmth</strong>
+            <p>Patients can start a form, pause, and return later without losing their progress.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-strip">
+      <article class="info-card card">
+        <img src="assets/icon-book.svg" alt="" aria-hidden="true">
+        <div>
+          <p class="eyebrow">Book</p>
+          <h3>Guided appointments</h3>
+          <p>Choose a specialty, doctor, date, and time in a short step-by-step flow.</p>
+        </div>
+      </article>
+      <article class="info-card card">
+        <img src="assets/icon-staff.svg" alt="" aria-hidden="true">
+        <div>
+          <p class="eyebrow">Staff</p>
+          <h3>Friendly care team</h3>
+          <p>See available clinicians and route staff to the right dashboard quickly.</p>
+        </div>
+      </article>
+      <article class="info-card card">
+        <img src="assets/icon-history.svg" alt="" aria-hidden="true">
+        <div>
+          <p class="eyebrow">History</p>
+          <h3>Care records</h3>
+          <p>Members can review recent bookings and follow-up information in the portal.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="book" class="booking-layout">
+      <article class="card wizard-card">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Book An Appointment</p>
+            <h2>Choose your visit in a verified booking flow</h2>
+          </div>
+          <button id="resetWizard" class="ghost-button" type="button">Reset Form</button>
+        </div>
+
+        <div class="progress-row">
+          <div>
+            <p class="progress-title" id="stepLabel">Step 1 of 4</p>
+            <p class="progress-subtitle" id="stepSubtitle">Select the type of care you need.</p>
+          </div>
+          <span class="autosave-chip">Autosaved</span>
+        </div>
+
+        <div class="progress-track" aria-hidden="true">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+
+        <div class="wizard-panel">
+          <p class="wizard-question" id="wizardQuestion"></p>
+          <div id="wizardScreen" class="wizard-screen"></div>
+        </div>
+
+        <div class="wizard-nav">
+          <button id="backButton" class="nav-button muted" type="button">Back</button>
+          <button id="nextButton" class="nav-button primary" type="button">Continue</button>
+        </div>
+      </article>
+
+      <aside class="card side-card">
+        <div class="section-head compact">
+          <div>
+            <p class="eyebrow">Booking Summary</p>
+            <h2>Your visit details</h2>
+          </div>
+        </div>
+
+        <div class="summary-list">
+          <div class="summary-item">
+            <span>Specialty</span>
+            <strong id="summarySpecialty">Not selected</strong>
+          </div>
+          <div class="summary-item">
+            <span>Doctor</span>
+            <strong id="summaryDoctor">Not selected</strong>
+          </div>
+          <div class="summary-item">
+            <span>Date</span>
+            <strong id="summaryDate">Not selected</strong>
+          </div>
+          <div class="summary-item">
+            <span>Time</span>
+            <strong id="summaryTime">Not selected</strong>
+          </div>
+        </div>
+
+        <div class="side-note" id="resumeNotice">
+          Your booking progress is safely stored in this browser so you can return later.
+        </div>
+
+        <div class="state-card">
+          <p class="state-title">Why patients trust this page</p>
+          <ul class="plain-list">
+            <li>Clear white layout with trust-blue guidance.</li>
+            <li>Verified badge visible on the registration action.</li>
+            <li>Professional structure with a softer, friendlier clinic tone.</li>
+          </ul>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="wizard.js"></script>
+</body>
+</html>
